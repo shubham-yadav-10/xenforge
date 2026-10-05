@@ -1,0 +1,6 @@
+{
+  "name": "FORGE",
+  "description": "FORGE designs, builds, and grows digital products, websites, apps, and automated systems for businesses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
