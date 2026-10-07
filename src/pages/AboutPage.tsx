@@ -1,148 +1,164 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Sparkles, Users } from 'lucide-react';
 
 export default function AboutPage() {
+  const values = [
+    {
+      title: 'Show, don’t just tell.',
+      desc: 'We prove our value with real work before you commit. We build you a free sample before asking for a rupee.',
+    },
+    {
+      title: 'Honest advice.',
+      desc: 'If you don’t need a service, we’ll say so. We never sell you complex systems your business isn’t ready for.',
+    },
+    {
+      title: 'Speed with quality.',
+      desc: 'Fast delivery never means rushed work. We work in focused sprint cycles without bloated bureaucratic delays.',
+    },
+    {
+      title: 'Your growth is our growth.',
+      desc: 'We measure success by your results—inquiries captured, hours saved, and customer orders—not by our invoices.',
+    },
+  ];
+
   return (
     <div className="pt-32 pb-24 px-6 sm:px-12 bg-black min-h-screen text-white">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <header className="pb-16 border-b border-white/10 mb-16">
-          <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-3">
-            AGENCY MANIFESTO & PRINCIPLES
-          </span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass text-xs font-mono text-white/80 mb-5 border border-white/10">
+            <Users size={12} className="text-white/80" />
+            <span>ABOUT XENFORGE · BENGALURU, INDIA</span>
+          </div>
+
           <h1 className="text-4xl sm:text-6xl font-medium tracking-tight text-white mb-6 leading-tight">
-            A SMALL TEAM
+            Three people. One mission:
             <br />
-            <span className="text-white/70">WITH A LOT TO BUILD.</span>
+            <span className="text-white/70">help businesses win online.</span>
           </h1>
+
           <p className="text-xl sm:text-2xl text-white/60 font-normal max-w-2xl leading-relaxed mb-10">
-            FORGE brings design, development, automation and growth into one workflow.
-            We work closely with clients, keep the process direct and build around the
-            actual problem instead of forcing every project into the same template.
+            We combine design, development, AI and marketing under one roof so you don&apos;t have
+            to juggle five different freelancers.
           </p>
 
-          <Link
-            to="/contact"
-            className="bg-white text-black text-sm font-medium px-7 py-3.5 rounded-full hover:bg-white/90 transition-colors inline-flex items-center gap-2 shadow-lg"
-          >
-            <span>Start a Project</span>
-            <ArrowRight size={15} />
-          </Link>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link
+              to="/audit"
+              className="bg-white text-black text-sm font-medium px-7 py-3.5 rounded-full hover:bg-white/90 transition-colors inline-flex items-center gap-2 shadow-lg"
+            >
+              <span>Get a Free Business Audit</span>
+              <ArrowRight size={15} />
+            </Link>
+            <Link
+              to="/contact"
+              className="liquid-glass text-white text-sm font-medium px-6 py-3.5 rounded-full hover:bg-white/5 transition-colors"
+            >
+              Book a 20-Min Call
+            </Link>
+          </div>
         </header>
 
-        {/* 1. Who We Are */}
+        {/* 1. Our Story */}
         <section className="mb-20">
           <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-3">
-            01 / WHO WE ARE
+            01 / OUR STORY
           </span>
           <h2 className="text-2xl sm:text-3xl font-medium text-white mb-6">
-            Engineers, Designers & Systems Architects
+            The Observation That Started XenForge
           </h2>
-          <div className="space-y-4 text-base sm:text-lg text-white/75 leading-relaxed font-normal max-w-3xl">
+          <div className="space-y-5 text-base sm:text-lg text-white/75 leading-relaxed font-normal max-w-3xl">
             <p>
-              We are not a bloated agency layer with layers of non-technical project managers.
-              When you communicate with FORGE, you are speaking directly with the people who
-              write the TypeScript, structure the database schemas, design the Figma tokens,
-              and tune the automated pipelines.
+              XenForge started with a simple observation: thousands of talented small businesses,
+              from local cafés to boutique brands, run beautiful Instagram pages but have no website,
+              no automation and no real digital system behind them. They&apos;re doing great work and
+              still losing customers.
             </p>
             <p>
-              This direct model eliminates miscommunication, prevents sluggish turnaround
-              times, and ensures that every technical decision is tied to commercial reality.
+              When interested buyers search Google Maps or want to book an appointment after hours,
+              they hit dead ends. Inquiries sit unanswered in DMs, and founders waste dozens of hours
+              every week copying phone numbers and answering repetitive questions.
+            </p>
+            <p>
+              We&apos;re a team of three who decided to fix that. We combine design, development, AI
+              and marketing under one roof so you don&apos;t have to manage disparate agencies or
+              compromise on quality.
             </p>
           </div>
         </section>
 
-        {/* 2. How We Think */}
+        {/* 2. Our Mission */}
         <section className="mb-20 pt-12 border-t border-white/10">
           <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-3">
-            02 / HOW WE THINK
+            02 / OUR MISSION
           </span>
-          <h2 className="text-2xl sm:text-3xl font-medium text-white mb-6">
-            Utility Precedes Decoration
+          <div className="liquid-glass rounded-2xl p-8 sm:p-12 border border-white/10 max-w-3xl">
+            <h3 className="text-2xl sm:text-3xl font-medium text-white mb-4 tracking-tight leading-snug">
+              To give every ambitious business the digital tools that used to be available
+              only to big companies.
+            </h3>
+            <p className="text-sm sm:text-base text-white/70 leading-relaxed font-normal">
+              High-speed conversion websites, intelligent customer chat automations, professional
+              video ad editing, and targeted local SEO shouldn&apos;t require a ₹10 Lakh corporate
+              retainer. We engineer practical, accessible digital foundations built to work.
+            </p>
+          </div>
+        </section>
+
+        {/* 3. Our Values */}
+        <section className="mb-20 pt-12 border-t border-white/10">
+          <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-3">
+            03 / OUR VALUES
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-medium text-white mb-8">
+            How We Operate Every Single Day
           </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="liquid-glass rounded-xl p-6 border border-white/10">
-              <h3 className="text-lg font-medium text-white mb-2">Build for the Operator</h3>
-              <p className="text-sm text-white/60 leading-relaxed">
-                If an interface confuses a customer or slows down an internal team member,
-                it has failed regardless of how attractive it looks on a designer&apos;s monitor.
-              </p>
-            </div>
-            <div className="liquid-glass rounded-xl p-6 border border-white/10">
-              <h3 className="text-lg font-medium text-white mb-2">Zero Premature Complexity</h3>
-              <p className="text-sm text-white/60 leading-relaxed">
-                We choose battle-tested technologies that perform reliably under pressure rather
-                than chasing trendy frameworks that demand rewrites within eighteen months.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. What We Value */}
-        <section className="mb-20 pt-12 border-t border-white/10">
-          <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-3">
-            03 / WHAT WE VALUE
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-medium text-white mb-6">
-            Core Operational Commitments
-          </h2>
-          <div className="space-y-4">
-            {[
-              {
-                title: 'Transparent Timelines and Fixed Pricing',
-                desc: 'We define the deliverables, scope boundaries, and delivery schedule before work starts. No surprise invoices or open-ended hourly bloat.',
-              },
-              {
-                title: 'High Velocity Through Focus',
-                desc: 'We limit the number of active clients we take on simultaneously to ensure every build receives undivided engineering attention.',
-              },
-              {
-                title: 'Complete IP Ownership',
-                desc: 'You own every line of code, design file, and database schema from day one. Zero proprietary lock-in or licensing fees.',
-              },
-            ].map((v) => (
+            {values.map((v) => (
               <div
                 key={v.title}
-                className="liquid-glass rounded-xl p-6 border border-white/10 flex items-start gap-4"
+                className="liquid-glass rounded-xl p-7 border border-white/10 flex flex-col justify-between"
               >
-                <CheckCircle2 size={18} className="text-white/70 shrink-0 mt-0.5" />
                 <div>
-                  <h3 className="text-base font-medium text-white mb-1">{v.title}</h3>
-                  <p className="text-sm text-white/60 leading-relaxed">{v.desc}</p>
+                  <h3 className="text-lg font-medium text-white mb-2 flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-white/70" />
+                    <span>{v.title}</span>
+                  </h3>
+                  <p className="text-sm text-white/65 leading-relaxed font-normal">
+                    {v.desc}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* 4. How We Work */}
+        {/* 4. Team Structure Note */}
         <section className="mb-20 pt-12 border-t border-white/10">
           <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-3">
-            04 / HOW WE WORK
+            04 / THE TEAM
           </span>
-          <h2 className="text-2xl sm:text-3xl font-medium text-white mb-6">
-            Sprint Rhythm & Communication
-          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <span className="font-mono text-xs text-white/40 block mb-2">CADENCE</span>
-              <h3 className="text-lg font-medium text-white mb-2">Weekly Demos</h3>
+              <span className="font-mono text-xs text-white/40 block mb-1">FOUNDER & LEAD</span>
+              <h4 className="text-lg font-medium text-white mb-1">Shubham</h4>
               <p className="text-xs text-white/60 leading-relaxed">
-                Live URL staging previews deployed every week so you can test features on real devices.
+                Frontend architecture, interactive UI systems, and client solutions.
               </p>
             </div>
             <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <span className="font-mono text-xs text-white/40 block mb-2">CHANNELS</span>
-              <h3 className="text-lg font-medium text-white mb-2">Direct Slack & Git</h3>
+              <span className="font-mono text-xs text-white/40 block mb-1">ENGINEERING</span>
+              <h4 className="text-lg font-medium text-white mb-1">AI & Automations</h4>
               <p className="text-xs text-white/60 leading-relaxed">
-                Shared Slack connect channels and GitHub access for real-time asynchronous updates.
+                Chatbot logic, WhatsApp integration, API connectors, and lead pipelines.
               </p>
             </div>
             <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <span className="font-mono text-xs text-white/40 block mb-2">HANDOFF</span>
-              <h3 className="text-lg font-medium text-white mb-2">Video Walkthroughs</h3>
+              <span className="font-mono text-xs text-white/40 block mb-1">GROWTH & CREATIVE</span>
+              <h4 className="text-lg font-medium text-white mb-1">Creative & Media</h4>
               <p className="text-xs text-white/60 leading-relaxed">
-                Recorded system documentation and operator guides for your internal staff.
+                Short-form video editing, visual pacing, and digital ad strategy.
               </p>
             </div>
           </div>
@@ -151,16 +167,17 @@ export default function AboutPage() {
         {/* 5. Bottom CTA */}
         <div className="pt-16 border-t border-white/10 text-center">
           <h2 className="text-3xl sm:text-4xl font-medium text-white mb-3">
-            Ready to build together?
+            Ready to see what we can do for your business?
           </h2>
           <p className="text-sm text-white/60 mb-8 max-w-md mx-auto">
-            Tell us about your team, your current infrastructure, and what you need deployed.
+            Get a free audit and a tailored sample mockup before making any financial commitment.
           </p>
           <Link
-            to="/contact"
-            className="bg-white text-black text-sm font-medium px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors inline-block shadow-lg"
+            to="/audit"
+            className="bg-white text-black text-sm font-medium px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors inline-flex items-center gap-2 shadow-lg"
           >
-            Start a Direct Project Discussion
+            <Sparkles size={15} />
+            <span>Request Your Free Audit & Sample</span>
           </Link>
         </div>
       </div>

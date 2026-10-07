@@ -9,42 +9,42 @@ export const faqData: FAQItem[] = [
     id: '01',
     question: 'How does a project start?',
     answer:
-      'Every project starts with an initial discovery conversation. We learn how your business operates, what problems are slowing you down, and what the project needs to achieve. If there is mutual alignment, we define a clear scope, timeline, milestones, and a fixed proposal before any contract is signed.',
+      'We start with a free business audit. We research your market, your competitors, and the digital gaps costing you customers. Before we ask for a single rupee, we build a free sample of your solution (like a homepage mockup or automation demo) so you see exactly what you are getting before you decide.',
   },
   {
     id: '02',
-    question: 'How long does a website take?',
+    question: 'How long does a website or automation project take?',
     answer:
-      'A focused editorial or marketing website typically takes 3 to 5 weeks from kickoff to launch. More complex web applications with custom database architecture, authenticated client portals, or deep third-party API integrations generally take between 6 to 10 weeks. We provide realistic schedules and deliver against defined milestones.',
+      'A focused, mobile-friendly marketing or business website typically takes 2 to 3 weeks from kickoff to launch. AI chatbots and lead automation pipelines typically take 5 to 10 days. We provide realistic schedules and deliver against defined milestones.',
   },
   {
     id: '03',
-    question: 'Can you work with an existing website?',
+    question: 'Can you work with an existing website or social page?',
     answer:
-      'Yes. We regularly take over existing codebases to fix performance bottlenecks, eliminate technical debt, redesign critical user journeys, or implement modern features. We begin by auditing your current architecture and give you an honest recommendation on whether refactoring or rebuilding is the smarter commercial path.',
+      'Yes. Many clients already have an Instagram page or an older website. We can rebuild or upgrade your existing site, connect automated WhatsApp replies to your current inquiries, or optimize your Google Business profile without disrupting current operations.',
   },
   {
     id: '04',
-    question: 'Do you build custom AI automation?',
+    question: 'Do you build custom AI automation for small businesses?',
     answer:
-      'Yes. We build practical AI automations tied directly to tangible business tasks—such as inbound lead triage, customer inquiry routing, automated document processing, and internal team knowledge retrieval. We do not build novelty AI demos; every system we deploy must have a specific, measurable job.',
+      'Yes. We build practical AI automations that save real hours every week: customer service chatbots for WhatsApp/Instagram, automatic replies to common questions, lead capture into Google Sheets or CRMs, and booking reminders. No complex jargon or impractical experiments.',
   },
   {
     id: '05',
-    question: 'Do you provide ongoing support?',
+    question: 'What is your revision and ownership policy?',
     answer:
-      'Yes. We offer continuous engineering, design, and growth retainers to keep your systems fast, secure, and evolving alongside your business. You can also engage us on a project-by-project basis if your needs are seasonal.',
+      'Every project includes two rounds of free revisions to ensure you love the final product. Once the project is paid for, you own 100% of your website, design files, accounts, and data. We never lock you into proprietary hosting traps.',
   },
   {
     id: '06',
-    question: 'Can you work with an existing development team?',
+    question: 'How does the free audit and free sample work?',
     answer:
-      'Frequently. We often embed as a specialized unit focusing on design systems, frontend architecture, motion engineering, or AI pipelines alongside existing in-house developers. We work with standard Git pull requests, clear documentation, and transparent sprint cycles.',
+      'Simply share your business name and Instagram or website link through our Free Audit form. Within 48 hours, we send you a clear breakdown of what is working, what is costing you customers, and a sample preview of the solution we would build for you. There is zero pressure and zero obligation.',
   },
   {
     id: '07',
-    question: 'What information do you need before starting?',
+    question: 'What do you need from me before we start?',
     answer:
-      'A summary of what you are aiming to build or solve, any existing brand guidelines or design files, access to relevant codebases or analytics accounts if applicable, and your intended target launch window and budget range. If you do not have all of this documented yet, our initial discovery call will help define it.',
+      'Just your business details, any existing photos/logos, and an idea of what problems are currently costing you time or customers. If you do not have photos or copy ready, we help guide you through it step by step.',
   },
 ];

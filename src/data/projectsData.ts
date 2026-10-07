@@ -3,144 +3,123 @@ export interface ProjectItem {
   slug: string;
   title: string;
   subtitle: string;
-  category: 'Web' | 'Apps' | 'AI' | 'Growth' | 'Video';
-  categories: ('Web' | 'Apps' | 'AI' | 'Growth' | 'Video')[];
-  industry: string;
+  conceptType: string;
+  category: 'Website' | 'AI Automation' | 'Marketing' | 'Video';
+  categories: ('Website' | 'AI Automation' | 'Marketing' | 'Video')[];
+  businessType: string;
   services: string[];
   overview: string;
-  challenge: string;
+  problemSolves: string;
   approach: string;
   solution: string;
   technologies: string[];
   qualitativeResults: string[];
   nextProjectSlug: string;
-  accentColor?: string;
 }
 
 export const projectsData: ProjectItem[] = [
   {
     id: '01',
-    slug: 'estateflow',
+    slug: 'estateflow-concept',
     title: 'EstateFlow',
-    subtitle: 'Real Estate CRM + AI',
-    category: 'Apps',
-    categories: ['Apps', 'AI'],
-    industry: 'PropTech & Real Estate',
-    services: ['App Development', 'AI Automation', 'UI/UX Design'],
+    subtitle: 'Real Estate CRM & AI Triage Platform',
+    conceptType: 'Concept: Real estate agency platform, designed by XenForge',
+    category: 'AI Automation',
+    categories: ['AI Automation', 'Website'],
+    businessType: 'Real Estate Brokerage & Property Consulting',
+    services: ['Website Development', 'AI Automation', 'WhatsApp Integration'],
     overview:
-      'A streamlined CRM and qualification interface that connects inbound property inquiries with automated instant responses, calendar booking, and structured agent triage.',
-    challenge:
-      'Real estate brokerages routinely missed after-hours inquiries from major property portals. Lead details sat in unread email inboxes until the following business day, by which time prospective buyers had already contacted competitor agencies.',
+      'A prototype system built for property brokers to capture after-hours portal inquiries and qualify buyers instantly via automated WhatsApp dialogue.',
+    problemSolves:
+      'Brokers lose high-intent home buyers because inquiries arrive late in the evening and wait till next morning. EstateFlow immediately answers, qualifies buyer budget, and schedules viewing slots.',
     approach:
-      'We designed an automated conversational pipeline that immediately engages incoming inquiries via WhatsApp and SMS, validates buyer purchasing criteria, and synchronizes qualified showings directly into agent calendars.',
+      'We designed an instant WhatsApp verification webhook coupled with a clean web schedule calendar and a simple lead board for agents.',
     solution:
-      'A unified web and mobile application built on Next.js and FastAPI, integrated with real estate listing feeds, automated chat triage with human handoff, and an interactive agent pipeline dashboard.',
-    technologies: ['Next.js', 'TypeScript', 'FastAPI', 'PostgreSQL', 'Tailwind CSS', 'Docker'],
+      'Responsive React frontend with automated lead routing, structured intake questionnaires, and zero delayed responses for property inquiries.',
+    technologies: ['React', 'TypeScript', 'WhatsApp Cloud API', 'Tailwind CSS', 'Google Sheets'],
     qualitativeResults: [
-      'Eliminated after-hours response delays through automated conversational intake.',
-      'Agents receive structured buyer profiles and pre-scheduled viewings before picking up the phone.',
-      'Zero manual data re-entry required across disparate listing syndication feeds.',
+      'Concept verified: prospective buyers receive an immediate polite response within 10 seconds.',
+      'Agents receive pre-qualified buyer criteria before scheduling property showings.',
+      'Saves brokers over 10 hours a week in repetitive telephone qualification.',
     ],
-    nextProjectSlug: 'ai-doctor',
+    nextProjectSlug: 'artisan-cafe',
   },
   {
     id: '02',
-    slug: 'ai-doctor',
-    title: 'AI Doctor',
-    subtitle: 'AI-Powered Assistant',
-    category: 'AI',
-    categories: ['AI', 'Apps'],
-    industry: 'Healthcare Technology',
-    services: ['AI Automation', 'Web Application', 'UX Research'],
+    slug: 'artisan-cafe',
+    title: 'The Amber Hearth',
+    subtitle: 'Boutique Café & Bakery Storefront',
+    conceptType: 'Concept: Boutique café & dining website, designed by XenForge',
+    category: 'Website',
+    categories: ['Website', 'Marketing'],
+    businessType: 'Hospitality & Specialty Food',
+    services: ['Website Development', 'Google Business Setup', 'Menu Engineering'],
     overview:
-      'A secure clinical workflow assistant designed to summarize patient consultations, structure subjective-objective findings, and reduce administrative typing during visits.',
-    challenge:
-      'Clinicians were spending over a third of patient consultation time staring into electronic health record screens, leading to practitioner fatigue and diminished patient rapport.',
+      'A fast, mobile-first website designed for an artisanal bakery and café featuring interactive digital menus, Google Maps directions, and one-tap table reservations.',
+    problemSolves:
+      'Cafés often rely only on Instagram profiles, losing diners who search Google Maps for menus, opening hours, or table bookings during peak weekend hours.',
     approach:
-      'We architected an unobtrusive, ambient interface that captures authorized consultation dialogue, extracts clinical symptoms into structured note drafts, and presents them for physician verification in a single click.',
+      'We crafted a warm, appetizing visual hierarchy that loads in under 1 second on mobile networks and lets patrons reserve a table via WhatsApp in two taps.',
     solution:
-      'A privacy-conscious web client featuring real-time encrypted audio streaming, local voice transcription, and strict role-based document storage compliant with clinical data confidentiality.',
-    technologies: ['React', 'FastAPI', 'Python', 'PostgreSQL', 'Tailwind CSS', 'Docker'],
+      'A lightweight React website with responsive digital food menus, dietary filter tags, and direct WhatsApp reservation messaging.',
+    technologies: ['Next.js', 'Tailwind CSS', 'Google Maps API', 'WhatsApp Link Protocol'],
     qualitativeResults: [
-      'Clinicians maintain direct eye contact with patients throughout consultations without constant typing.',
-      'Note documentation drafts are compiled and formatted immediately upon session conclusion.',
-      'Physicians retain complete oversight with simple one-click verification and edit controls.',
+      'Page loads in under 800ms on standard mobile 4G networks.',
+      'Patrons find opening hours and menu pricing instantly without scrolling through old Instagram highlights.',
+      'One-tap WhatsApp booking eliminates phone tag during busy kitchen hours.',
     ],
-    nextProjectSlug: 'cloudscale',
+    nextProjectSlug: 'luxe-dental',
   },
   {
     id: '03',
-    slug: 'cloudscale',
-    title: 'CloudScale',
-    subtitle: 'Cloud Infrastructure Platform',
-    category: 'Web',
-    categories: ['Web', 'Apps'],
-    industry: 'DevOps & Cloud Computing',
-    services: ['Website Development', 'Dashboard Architecture', 'UI/UX'],
+    slug: 'luxe-dental',
+    title: 'Aura Dental Studio',
+    subtitle: 'Cosmetic Dentistry & Clinic Booking Portal',
+    conceptType: 'Concept: Clinic & wellness booking website, designed by XenForge',
+    category: 'Website',
+    categories: ['Website', 'AI Automation'],
+    businessType: 'Healthcare & Aesthetic Wellness',
+    services: ['Website Development', 'Appointment Scheduling', 'Patient FAQ Chat'],
     overview:
-      'A high-performance observability interface that surfaces Kubernetes cluster telemetry, network bottlenecks, and compute expenditure across multi-cloud deployments.',
-    challenge:
-      'Engineering teams struggled to parse disconnected telemetry dashboards across AWS, GCP, and Cloudflare, causing unbudgeted cost spikes and delayed incident triage.',
+      'A clean, reassuring digital clinic presence with interactive treatment pricing guides, before-and-after cases, and 24/7 appointment scheduling.',
+    problemSolves:
+      'Prospective patients hesitate when dental clinic sites lack transparent consultation details or require calling during clinic operating hours.',
     approach:
-      'We mapped the core metrics infrastructure engineers need in emergency scenarios and designed a dense, low-latency monitoring canvas with instant keyboard filtering.',
+      'We structured clear treatment overviews with a conversational intake assistant that answers pricing queries and suggests available appointment times.',
     solution:
-      'A lightweight web client utilizing WebSockets for streaming metric feeds, sub-second search across distributed cluster nodes, and automated alert grouping.',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'ClickHouse', 'Cloudflare'],
+      'Accessible web interface with clear typography, verified doctor credentials, and automated calendar slot reservation.',
+    technologies: ['React', 'TypeScript', 'Calendly API', 'Tailwind CSS'],
     qualitativeResults: [
-      'Engineering squads gained a unified single-pane operational view across heterogeneous clouds.',
-      'Sub-second telemetry queries replaced legacy multi-minute dashboard loading screens.',
-      'Identified and trimmed underutilized reserved compute instances across staging environments.',
+      'Patients can review transparent treatment overviews and book appointments anytime.',
+      'Receptionists spend less time answering basic pricing questions on the phone.',
+      'Professional clinic presentation elevates trust for high-value cosmetic procedures.',
     ],
-    nextProjectSlug: 'forge-commerce',
+    nextProjectSlug: 'kinfolk-motion',
   },
   {
     id: '04',
-    slug: 'forge-commerce',
-    title: 'Forge Commerce',
-    subtitle: 'E-commerce Experience',
-    category: 'Web',
-    categories: ['Web', 'Growth'],
-    industry: 'Direct-to-Consumer Goods',
-    services: ['Website Development', 'Paid Advertising', 'Conversion Optimization'],
-    overview:
-      'A bespoke headless storefront engineered for a boutique luxury goods manufacturer, pairing tactile editorial product storytelling with instant page transitions.',
-    challenge:
-      'The client’s legacy e-commerce template suffered from sluggish mobile render times, cluttered navigation, and a disconnected checkout flow that depressed mobile conversion.',
-    approach:
-      'We completely separated the frontend presentation layer from the commerce backplane, using static edge generation and lean asset delivery to produce immediate responsiveness.',
-    solution:
-      'A modern headless Next.js storefront with dynamic product filtering, smooth drawer navigation, localized currency display, and a streamlined single-page checkout flow.',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Shopify Storefront API'],
-    qualitativeResults: [
-      'Lighthouse mobile performance scores elevated from below 45 to consistent 95+ ratings.',
-      'Instantaneous page transitions eliminated mobile navigation hesitation.',
-      'Clean editorial typography elevated perceived product craftsmanship among buyers.',
-    ],
-    nextProjectSlug: 'brand-motion',
-  },
-  {
-    id: '05',
-    slug: 'brand-motion',
-    title: 'Brand Motion',
-    subtitle: 'Video Campaign',
+    slug: 'kinfolk-motion',
+    title: 'Kinfolk Apparel',
+    subtitle: 'Scroll-Stopping Reels & Ad Campaign Cuts',
+    conceptType: 'Concept: D2C fashion brand video campaign, edited by XenForge',
     category: 'Video',
-    categories: ['Video', 'Growth'],
-    industry: 'Industrial Design & Architecture',
-    services: ['Video Editing', 'Motion Graphics', 'Paid Advertising'],
+    categories: ['Video', 'Marketing'],
+    businessType: 'Direct-to-Consumer Fashion & Lifestyle',
+    services: ['Video Editing', 'Motion Graphics', 'Sound Design'],
     overview:
-      'A cohesive motion identity and social campaign developed to showcase precision architectural hardware to high-end design firms and general contractors.',
-    challenge:
-      'B2B hardware specifications were traditionally buried in dense static PDF catalogs, resulting in low digital awareness and minimal social brand retention.',
+      'A series of dynamic 9:16 Instagram Reels and YouTube Shorts edited from raw founder and product footage, designed to stop scrolling velocity within the first 2 seconds.',
+    problemSolves:
+      'Brands waste ad spend on unpolished videos with weak hooks where over 80% of viewers scroll away before seeing the product or offer.',
     approach:
-      'We captured close-up mechanical movements and tactile assembly sequences, blending macro cinematography with clean typographic callouts and subtle sound design.',
+      'We engineered attention-grabbing visual hooks, dynamic kinetic captions, bespoke sound mixing, and concise product call-to-actions.',
     solution:
-      'A series of modular video assets formatted across 9:16 and 16:9 aspect ratios, tailored for LinkedIn technical audiences and Instagram design showcases.',
-    technologies: ['Premiere Pro', 'After Effects', 'Cinema 4D', 'Meta Ads', 'Google Ads'],
+      'High-energy 15-second and 30-second vertical social edits formatted specifically for Meta Ads, Instagram Reels, and YouTube Shorts.',
+    technologies: ['Premiere Pro', 'After Effects', 'Sound FX Mixing', 'Color Grading'],
     qualitativeResults: [
-      'Transformed static product catalog specs into engaging, scroll-stopping social creative.',
-      'Significantly higher watch-through completion rates across technical architect demographics.',
-      'Delivered a reusable modular motion library for upcoming seasonal product launches.',
+      'Fast, rhythmic cuts designed specifically to hold mobile viewer attention.',
+      'Bold, legible on-screen animated text accessible even with audio muted.',
+      'Clear, repeatable creative template for weekly product drops.',
     ],
-    nextProjectSlug: 'estateflow',
+    nextProjectSlug: 'estateflow-concept',
   },
 ];

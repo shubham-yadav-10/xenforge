@@ -5,7 +5,16 @@ import { projectsData } from '../data/projectsData';
 
 export default function ServiceDetailPage() {
   const { slug } = useParams<{ slug: string }>();
-  const service = servicesData.find((s) => s.slug === slug);
+
+  // Map legacy / alternative slugs to the 4 XenForge content pack services
+  const normalizedSlug =
+    slug === 'seo' || slug === 'paid-advertising'
+      ? 'digital-marketing'
+      : slug === 'app-development'
+      ? 'web-development'
+      : slug;
+
+  const service = servicesData.find((s) => s.slug === normalizedSlug);
 
   if (!service) {
     return <Navigate to="/services" replace />;
@@ -325,7 +334,7 @@ export default function ServiceDetailPage() {
                 className="liquid-glass rounded-xl p-6 border border-white/10 hover:border-white/20 transition-colors group block"
               >
                 <div className="flex items-center justify-between text-xs font-mono text-white/40 mb-2">
-                  <span>{p.industry}</span>
+                  <span>{p.businessType}</span>
                   <ArrowUpRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
                 </div>
                 <h3 className="text-xl font-medium text-white group-hover:text-white/90">

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Sparkles } from 'lucide-react';
 import { projectsData } from '../data/projectsData';
 
-type FilterType = 'All' | 'Web' | 'Apps' | 'AI' | 'Growth' | 'Video';
+type FilterType = 'All' | 'Website' | 'AI Automation' | 'Marketing' | 'Video';
 
 export default function WorkPage() {
   const [activeFilter, setActiveFilter] = useState<FilterType>('All');
@@ -21,19 +21,19 @@ export default function WorkPage() {
         {/* Page Introduction */}
         <div className="mb-16 pb-8 border-b border-white/10">
           <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-3">
-            PORTFOLIO / SELECTED WORK
+            SAMPLE WORK SHOWCASE & CONCEPTS
           </span>
           <h1 className="text-4xl sm:text-6xl font-medium tracking-tight text-white mb-6">
-            DIGITAL SYSTEMS & PRODUCTS
+            WHAT WE BUILD.
           </h1>
-          <p className="text-base sm:text-xl text-white/60 max-w-2xl font-normal leading-relaxed">
-            Real production architectures built for businesses across web development,
-            mobile products, applied AI automation, and performance marketing.
+          <p className="text-base sm:text-xl text-white/70 max-w-2xl font-normal leading-relaxed">
+            Honest sample concepts and prototypes engineered by XenForge. Before you pay a single
+            rupee, we study your business and create a tailored preview of your solution.
           </p>
 
           {/* Category Filter Controls */}
           <div className="mt-10 flex flex-wrap items-center gap-2">
-            {(['All', 'Web', 'Apps', 'AI', 'Growth', 'Video'] as FilterType[]).map(
+            {(['All', 'Website', 'AI Automation', 'Marketing', 'Video'] as FilterType[]).map(
               (filter) => (
                 <button
                   key={filter}
@@ -51,11 +51,11 @@ export default function WorkPage() {
           </div>
         </div>
 
-        {/* Featured Case Study Highlight (shown when All or Apps or AI is active) */}
+        {/* Featured Sample Concept Highlight */}
         {activeFilter === 'All' && (
           <div className="mb-16">
             <span className="font-mono text-xs text-white/40 uppercase tracking-widest block mb-4">
-              FEATURED CASE STUDY
+              FEATURED SAMPLE CONCEPT
             </span>
             <Link
               to={`/work/${featured.slug}`}
@@ -63,22 +63,24 @@ export default function WorkPage() {
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-7">
-                  <div className="flex items-center gap-3 text-xs font-mono text-white/50 mb-3">
-                    <span>{featured.industry}</span>
-                    <span>·</span>
-                    <span>{featured.services.join(' / ')}</span>
+                  <div className="text-xs font-mono text-emerald-400 mb-3">
+                    {featured.conceptType}
                   </div>
                   <h2 className="text-3xl sm:text-5xl font-medium text-white group-hover:text-white/90 tracking-tight">
                     {featured.title}
                   </h2>
                   <p className="text-lg text-white/50 mt-1 mb-4">{featured.subtitle}</p>
-                  <p className="text-sm sm:text-base text-white/70 leading-relaxed max-w-xl">
-                    {featured.overview}
-                  </p>
 
-                  <div className="mt-8 flex items-center gap-4">
+                  <div className="mb-6 p-4 rounded-xl bg-white/5 border border-white/10 text-xs sm:text-sm text-white/75 leading-relaxed">
+                    <strong className="text-white block font-mono text-[11px] uppercase mb-1">
+                      Problem It Solves:
+                    </strong>
+                    {featured.problemSolves}
+                  </div>
+
+                  <div className="flex items-center gap-4">
                     <span className="inline-flex items-center gap-2 text-xs font-medium text-white group-hover:translate-x-1 transition-transform">
-                      <span>VIEW FULL CASE STUDY</span>
+                      <span>VIEW CONCEPT ARCHITECTURE</span>
                       <ArrowUpRight size={14} />
                     </span>
                   </div>
@@ -87,19 +89,19 @@ export default function WorkPage() {
                 <div className="lg:col-span-5">
                   <div className="rounded-xl bg-white/5 border border-white/10 p-6 flex flex-col justify-between aspect-[16/10]">
                     <div className="flex items-center justify-between text-[11px] font-mono text-white/40">
-                      <span>{featured.slug}.app</span>
-                      <span>ACTIVE PIPELINE</span>
+                      <span>{featured.slug}.internal</span>
+                      <span>XENFORGE CONCEPT</span>
                     </div>
                     <div className="my-auto text-center">
                       <span className="font-mono text-xs text-white/50 block mb-1">
-                        OUTCOME HIGHLIGHT
+                        DESIGNED BY XENFORGE
                       </span>
                       <p className="text-sm text-white/90 max-w-xs mx-auto">
-                        Automated qualification dialogue & calendar sync for zero after-hours lead loss.
+                        Automated WhatsApp triage & calendar sync eliminating delayed responses.
                       </p>
                     </div>
                     <div className="text-[10px] font-mono text-white/30 text-right">
-                      NEXT.JS / FASTAPI / POSTGRES
+                      REACT / TAILWIND / WHATSAPP API
                     </div>
                   </div>
                 </div>
@@ -117,26 +119,26 @@ export default function WorkPage() {
               className="group liquid-glass rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="rounded-xl bg-gradient-to-b from-white/10 to-transparent border border-white/10 p-6 aspect-[16/9] mb-6 flex flex-col justify-between">
+                <div className="rounded-xl bg-gradient-to-br from-white/10 via-black to-black border border-white/10 p-6 aspect-[16/9] mb-6 flex flex-col justify-between">
                   <div className="flex items-center justify-between text-[11px] font-mono text-white/40">
-                    <span>{project.slug}</span>
-                    <span>{project.category}</span>
+                    <span className="truncate max-w-[200px]">{project.title}</span>
+                    <span className="px-2 py-0.5 rounded bg-white/10 text-white/70">
+                      {project.category}
+                    </span>
                   </div>
                   <div className="text-center my-auto">
                     <span className="text-xs font-mono text-white/40 uppercase block mb-1">
-                      {project.industry}
+                      {project.businessType}
                     </span>
                     <h3 className="text-2xl font-medium text-white">{project.title}</h3>
                   </div>
                   <div className="text-[10px] font-mono text-white/30 text-right">
-                    FORGE PRODUCTION
+                    XENFORGE SAMPLE
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs font-mono text-white/50 mb-2">
-                  <span>{project.industry}</span>
-                  <span>·</span>
-                  <span>{project.category}</span>
+                <div className="text-xs font-mono text-emerald-400 mb-2">
+                  {project.conceptType}
                 </div>
 
                 <h3 className="text-2xl font-medium text-white group-hover:text-white/90 tracking-tight">
@@ -146,17 +148,22 @@ export default function WorkPage() {
                   {project.subtitle}
                 </p>
 
-                <p className="text-sm text-white/70 leading-relaxed mt-4 line-clamp-3">
-                  {project.overview}
-                </p>
+                <div className="mt-4 pt-4 border-t border-white/10">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-white/40 block mb-1">
+                    Problem It Solves
+                  </span>
+                  <p className="text-sm text-white/70 leading-relaxed font-normal">
+                    {project.problemSolves}
+                  </p>
+                </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+              <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between">
                 <span className="text-xs font-mono text-white/40">
-                  {project.technologies.slice(0, 3).join(' · ')}
+                  {project.services.join(' · ')}
                 </span>
                 <span className="inline-flex items-center gap-1 text-xs font-medium text-white group-hover:translate-x-1 transition-transform">
-                  <span>VIEW PROJECT</span>
+                  <span>VIEW CONCEPT</span>
                   <ArrowUpRight size={13} />
                 </span>
               </div>
@@ -167,16 +174,17 @@ export default function WorkPage() {
         {/* Bottom Page CTA */}
         <div className="mt-24 pt-12 border-t border-white/10 text-center">
           <h3 className="text-2xl sm:text-3xl font-medium text-white mb-3">
-            Want to see how we can build for your business?
+            Want to see a custom sample for your business?
           </h3>
           <p className="text-sm text-white/60 mb-8 max-w-md mx-auto">
-            We will discuss your requirements, propose an architectural plan, and outline a fixed timeline.
+            Tell us about your brand. We&apos;ll research your competitors and send you a real mockup within 48 hours.
           </p>
           <Link
-            to="/contact"
-            className="bg-white text-black text-sm font-medium px-6 py-3 rounded-full hover:bg-white/90 transition-colors inline-block"
+            to="/audit"
+            className="bg-white text-black text-sm font-medium px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors inline-flex items-center gap-2 shadow-lg"
           >
-            Start a Project Inquiry
+            <Sparkles size={15} />
+            <span>Get a Free Business Audit & Sample</span>
           </Link>
         </div>
       </div>

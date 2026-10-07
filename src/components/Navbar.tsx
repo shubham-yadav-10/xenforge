@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ChevronDown, Infinity, Menu, X, ArrowUpRight } from 'lucide-react';
+import { ChevronDown, Infinity, Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { servicesData } from '../data/servicesData';
 
@@ -8,14 +8,14 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   const location = useLocation();
   const navigate = useNavigate();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      setScrolled(window.scrollY > 30);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -27,155 +27,204 @@ export default function Navbar() {
     setDropdownOpen(false);
   }, [location.pathname]);
 
-  const showToast = (msg: string) => {
-    setToastMessage(msg);
-    setTimeout(() => setToastMessage(null), 2500);
-  };
+  // Click outside and escape key handling for dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setDropdownOpen(false);
+      }
+    };
 
-  const navItems = [
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setDropdownOpen(false);
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  const navLinks = [
     { label: 'Home', path: '/' },
-    { label: 'Work', path: '/work' },
-    { label: 'Services', path: '/services', dropdown: true },
     { label: 'About', path: '/about' },
-    { label: 'Process', path: '/process' },
-    { label: 'Contact', path: '/contact' },
+    { label: 'Services', path: '/services', dropdown: true },
+    { label: 'Work', path: '/work' },
   ];
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none px-5 sm:px-8 py-5 ${
-          scrolled ? 'bg-black/60 backdrop-blur-md border-b border-white/5 py-4' : ''
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none ${
+          scrolled
+            ? 'bg-black/85 backdrop-blur-md border-b border-white/5 py-3 md:py-3.5 shadow-xl'
+            : 'py-4 md:py-5'
         }`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Logo (left) */}
-          <Link
-            to="/"
-            className="flex items-center gap-2 text-white font-medium text-base focus:outline-none pointer-events-auto cursor-pointer"
-          >
-            <Infinity size={22} strokeWidth={1.5} className="text-white" />
-            <span className="tracking-wide">FORGE</span>
-          </Link>
+        {/*
+          3-COLUMN GRID LAYOUT (Desktop & Tablet >= 768px):
+          grid-template-columns: 1fr auto 1fr;
+          - LEFT COLUMN: justify-self: start (Logo [∞ XenForge])
+          - CENTER COLUMN: justify-self: center (True viewport-centered nav container)
+          - RIGHT COLUMN: justify-self: end (Get Free Audit CTA)
 
-          {/* Nav pill (center, desktop) */}
-          <nav className="hidden md:flex liquid-glass items-center gap-1 rounded-xl px-2 py-2 pointer-events-auto">
-            {navItems.map((item) => {
-              const isActive =
-                item.path === '/'
-                  ? location.pathname === '/'
-                  : location.pathname.startsWith(item.path);
-
-              if (item.dropdown) {
-                return (
-                  <div
-                    key={item.label}
-                    className="relative"
-                    onMouseEnter={() => setDropdownOpen(true)}
-                    onMouseLeave={() => setDropdownOpen(false)}
-                  >
-                    <button
-                      onClick={() => navigate('/services')}
-                      className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm transition-colors cursor-pointer ${
-                        isActive ? 'bg-white/15 text-white' : 'text-white/70 hover:text-white'
-                      }`}
-                    >
-                      <span>{item.label}</span>
-                      <ChevronDown
-                        size={13}
-                        className={`mt-px transition-transform duration-200 ${
-                          dropdownOpen ? 'rotate-180' : ''
-                        }`}
-                      />
-                    </button>
-
-                    {/* Services Dropdown */}
-                    <AnimatePresence>
-                      {dropdownOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 6, scale: 0.96 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 6, scale: 0.96 }}
-                          transition={{ duration: 0.15 }}
-                          className="absolute top-full left-0 mt-2 w-72 liquid-glass rounded-xl p-2 z-50 flex flex-col gap-1 shadow-2xl backdrop-blur-xl border border-white/10"
-                        >
-                          {servicesData.map((service) => (
-                            <Link
-                              key={service.id}
-                              to={`/services/${service.slug}`}
-                              className="w-full text-left px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors block group"
-                            >
-                              <div className="flex items-center justify-between">
-                                <span className="font-medium text-xs text-white group-hover:text-white">
-                                  {service.title}
-                                </span>
-                                <span className="text-[10px] text-white/40 font-mono">
-                                  {service.number}
-                                </span>
-                              </div>
-                              <p className="text-[11px] text-white/50 line-clamp-1 mt-0.5">
-                                {service.shortDesc}
-                              </p>
-                            </Link>
-                          ))}
-                          <div className="pt-1.5 mt-1 border-t border-white/10">
-                            <Link
-                              to="/services"
-                              className="px-3 py-1.5 text-[11px] text-white/70 hover:text-white flex items-center justify-between rounded-md hover:bg-white/5 transition-colors"
-                            >
-                              <span>View All Services</span>
-                              <ArrowUpRight size={12} />
-                            </Link>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                );
-              }
-
-              return (
-                <Link
-                  key={item.label}
-                  to={item.path}
-                  className={`flex items-center gap-0.5 px-3 py-1.5 rounded-md text-sm transition-colors cursor-pointer ${
-                    isActive ? 'bg-white/15 text-white' : 'text-white/70 hover:text-white'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* CTAs (right, desktop) */}
-          <div className="hidden md:flex items-center gap-3 pointer-events-auto">
-            <button
-              onClick={() => showToast('Client portal access is available for ongoing retainers.')}
-              className="liquid-glass text-white text-sm font-medium px-4 py-2.5 rounded-full hover:bg-white/5 transition-colors cursor-pointer"
-            >
-              Log in
-            </button>
+          MOBILE (< 768px):
+          flex items-center justify-between (Logo left, Hamburger right)
+        */}
+        <div className="xf-navbar-container">
+          {/* LEFT COLUMN: Logo [∞ XenForge] */}
+          <div className="xf-navbar-left flex items-center min-w-0">
             <Link
-              to="/contact"
-              className="bg-white text-black text-sm font-medium px-4 py-2.5 rounded-full hover:bg-white/90 transition-colors cursor-pointer shadow-sm active:scale-[0.98]"
+              to="/"
+              className="flex items-center gap-2 text-white font-medium focus:outline-none pointer-events-auto cursor-pointer group shrink-0"
             >
-              Start a Project
+              <Infinity
+                size={22}
+                strokeWidth={1.5}
+                className="text-white group-hover:rotate-12 transition-transform duration-300 shrink-0"
+              />
+              <span className="tracking-wide font-semibold text-base sm:text-lg whitespace-nowrap">
+                XenForge
+              </span>
             </Link>
           </div>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setMenuOpen((prev) => !prev)}
-            aria-label="Toggle navigation menu"
-            className="md:hidden liquid-glass text-white p-2 rounded-lg cursor-pointer pointer-events-auto"
-          >
-            {menuOpen ? <X size={18} /> : <Menu size={18} />}
-          </button>
+          {/* CENTER COLUMN: Centered Navigation Container (Home, About, Services ˅, Work) */}
+          <div className="xf-navbar-center hidden md:flex items-center justify-center pointer-events-auto">
+            <nav className="liquid-glass !overflow-visible flex items-center gap-1 rounded-xl p-1.5 px-2.5 shrink-0 select-none border border-white/10">
+              {navLinks.map((item) => {
+                const isActive =
+                  item.path === '/'
+                    ? location.pathname === '/'
+                    : location.pathname.startsWith(item.path);
+
+                if (item.dropdown) {
+                  return (
+                    <div
+                      key={item.label}
+                      className="relative shrink-0"
+                      ref={dropdownRef}
+                      onMouseEnter={() => setDropdownOpen(true)}
+                      onMouseLeave={() => setDropdownOpen(false)}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => navigate('/services')}
+                        className={`flex items-center gap-1 rounded-md transition-colors cursor-pointer whitespace-nowrap font-medium px-2.5 lg:px-3.5 py-1.5 text-xs lg:text-sm ${
+                          isActive
+                            ? 'bg-white/15 text-white'
+                            : 'text-white/70 hover:text-white hover:bg-white/10'
+                        }`}
+                      >
+                        <span className="whitespace-nowrap">{item.label}</span>
+                        <ChevronDown
+                          size={13}
+                          className={`mt-px transition-transform duration-200 shrink-0 ${
+                            dropdownOpen ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </button>
+
+                      {/* Services Dropdown Panel */}
+                      <AnimatePresence>
+                        {dropdownOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 6, scale: 0.97 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: 6, scale: 0.97 }}
+                            transition={{ duration: 0.15 }}
+                            className="absolute top-full left-0 mt-2.5 w-[320px] sm:w-[350px] max-w-[min(360px,calc(100vw-32px))] bg-black/90 liquid-glass rounded-xl p-2 z-50 flex flex-col gap-1 shadow-2xl backdrop-blur-xl border border-white/10"
+                          >
+                            {servicesData.map((service) => (
+                              <Link
+                                key={service.id}
+                                to={`/services/${service.slug}`}
+                                onClick={() => setDropdownOpen(false)}
+                                className="w-full text-left px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors block group"
+                              >
+                                <div className="flex items-center justify-between">
+                                  <span className="font-medium text-xs text-white group-hover:text-white whitespace-nowrap">
+                                    {service.title}
+                                  </span>
+                                  <span className="text-[10px] text-white/40 font-mono">
+                                    {service.number}
+                                  </span>
+                                </div>
+                                <p className="text-[11px] text-white/50 line-clamp-1 mt-0.5">
+                                  {service.shortDesc}
+                                </p>
+                              </Link>
+                            ))}
+                            <div className="pt-1.5 mt-1 border-t border-white/10">
+                              <Link
+                                to="/services"
+                                onClick={() => setDropdownOpen(false)}
+                                className="px-3 py-1.5 text-[11px] text-white/70 hover:text-white flex items-center justify-between rounded-md hover:bg-white/5 transition-colors"
+                              >
+                                <span>View All 4 Practices</span>
+                                <ArrowUpRight size={12} />
+                              </Link>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={item.label}
+                    to={item.path}
+                    className={`flex items-center rounded-md transition-colors cursor-pointer whitespace-nowrap font-medium px-2.5 lg:px-3.5 py-1.5 text-xs lg:text-sm shrink-0 ${
+                      isActive
+                        ? 'bg-white/15 text-white'
+                        : 'text-white/70 hover:text-white hover:bg-white/10'
+                    }`}
+                  >
+                    <span className="whitespace-nowrap">{item.label}</span>
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
+
+          {/* RIGHT COLUMN: Right-Aligned CTA [ ✨ Get Free Audit ] on Desktop/Tablet, Hamburger on Mobile */}
+          <div className="xf-navbar-right flex items-center justify-end pointer-events-auto">
+            {/* Desktop & Tablet CTA: [ ✨ Get Free Audit ] (White Background, Black Text) */}
+            <Link
+              to="/audit"
+              className="hidden md:inline-flex bg-white text-black font-medium rounded-full px-5 py-2.5 text-xs sm:text-sm whitespace-nowrap shadow-sm hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] transition-all items-center gap-1.5 cursor-pointer"
+            >
+              <Sparkles size={13} className="text-black/80 shrink-0" />
+              <span className="whitespace-nowrap">Get Free Audit</span>
+            </Link>
+
+            {/* Mobile hamburger toggle (< 768px) */}
+            <button
+              type="button"
+              onClick={() => setMenuOpen((prev) => !prev)}
+              aria-label="Toggle navigation menu"
+              className="md:hidden liquid-glass text-white p-2 rounded-lg cursor-pointer hover:bg-white/10 transition-colors shrink-0"
+            >
+              {menuOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* Mobile full-screen navigation menu */}
+      {/* Mobile Slide-Down / Full-Screen Menu (< 768px) */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -189,7 +238,9 @@ export default function Navbar() {
               <span className="text-[11px] uppercase tracking-widest text-white/40 font-mono mb-2">
                 Navigation
               </span>
-              {navItems.map((item) => {
+
+              {/* The exact 4 navigation options */}
+              {navLinks.map((item) => {
                 const isActive =
                   item.path === '/'
                     ? location.pathname === '/'
@@ -211,9 +262,10 @@ export default function Navbar() {
                 );
               })}
 
+              {/* Services Sub-Links */}
               <div className="mt-4 pt-2">
                 <span className="text-[11px] uppercase tracking-widest text-white/40 font-mono mb-2 block">
-                  Services
+                  Core Practices
                 </span>
                 <div className="grid grid-cols-1 gap-2">
                   {servicesData.map((service) => (
@@ -231,35 +283,22 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Bottom CTA & info in mobile menu */}
+            {/* CTA in Mobile Menu: Get Free Audit (White background, black text) */}
             <div className="mt-8 pt-6 border-t border-white/10 flex flex-col gap-3">
               <Link
-                to="/contact"
+                to="/audit"
                 onClick={() => setMenuOpen(false)}
-                className="w-full bg-white text-black text-center text-sm font-medium py-3 rounded-full hover:bg-white/90 transition-colors"
+                className="w-full bg-white text-black text-center text-sm font-medium py-3 rounded-full hover:bg-white/90 transition-colors flex items-center justify-center gap-2 shadow-sm"
               >
-                Start a Project
+                <Sparkles size={14} className="text-black/80" />
+                <span>Get Free Audit</span>
               </Link>
+
               <div className="flex items-center justify-between text-xs text-white/50 mt-2 font-mono">
-                <span>hello@forge.agency</span>
-                <span>FORGE © 2026</span>
+                <span>hello@xenforge.com</span>
+                <span>XenForge © 2026</span>
               </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Floating feedback toast */}
-      <AnimatePresence>
-        {toastMessage && (
-          <motion.div
-            initial={{ opacity: 0, y: 16, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 16, scale: 0.95 }}
-            className="fixed bottom-6 right-6 z-50 liquid-glass text-white text-xs px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-2 pointer-events-none"
-          >
-            <div className="w-2 h-2 rounded-full bg-white/70 animate-pulse" />
-            <span>{toastMessage}</span>
           </motion.div>
         )}
       </AnimatePresence>

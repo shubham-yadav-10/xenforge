@@ -12,13 +12,13 @@ export default function ServicesPage() {
             CAPABILITIES & SERVICES
           </span>
           <h1 className="text-4xl sm:text-6xl font-medium tracking-tight text-white mb-6">
-            SIX PRACTICES.
+            FOUR PRACTICES.
             <br />
-            <span className="text-white/70">ONE INTEGRATED WORKFLOW.</span>
+            <span className="text-white/70">ALL UNDER ONE ROOF.</span>
           </h1>
           <p className="text-base sm:text-xl text-white/60 max-w-2xl font-normal leading-relaxed">
-            We avoid fractured handoffs between disparate creative shops and dev firms.
-            Every service operates in unison under one team.
+            Everything your business needs to look professional, work smarter and grow online.
+            Choose one service or combine them all.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export default function ServicesPage() {
                 <div className="lg:col-span-6 flex flex-col justify-between">
                   <div>
                     <span className="font-mono text-xs text-white/40 block mb-3">
-                      SERVICE {service.number} / 06
+                      SERVICE {service.number} / 04
                     </span>
                     <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-white mb-2">
                       {service.title}

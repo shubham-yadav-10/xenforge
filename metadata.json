@@ -1,6 +1,6 @@
 {
-  "name": "FORGE",
-  "description": "FORGE designs, builds, and grows digital products, websites, apps, and automated systems for businesses.",
+  "name": "XenForge",
+  "description": "We Forge Digital Growth for Ambitious Businesses. Websites, AI automation, marketing and video, all under one roof.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

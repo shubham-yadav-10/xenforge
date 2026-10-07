@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle2, Sparkles } from 'lucide-react';
 import { projectsData } from '../data/projectsData';
 
 export default function ProjectDetailPage() {
@@ -23,16 +23,15 @@ export default function ProjectDetailPage() {
             className="inline-flex items-center gap-2 text-xs font-mono text-white/50 hover:text-white transition-colors"
           >
             <ArrowLeft size={13} />
-            <span>BACK TO ALL WORK</span>
+            <span>BACK TO ALL SAMPLES</span>
           </Link>
         </div>
 
         {/* Case Study Header */}
         <header className="pb-12 border-b border-white/10 mb-16">
-          <div className="flex items-center gap-3 text-xs font-mono text-white/40 mb-4">
-            <span>{project.industry}</span>
-            <span>·</span>
-            <span>CASE STUDY 0{project.id}</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass text-xs font-mono text-emerald-400 mb-4 border border-white/10">
+            <Sparkles size={12} />
+            <span>{project.conceptType}</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-medium tracking-tight text-white mb-4 leading-tight">
@@ -47,9 +46,9 @@ export default function ProjectDetailPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-white/10 text-xs font-mono">
             <div>
               <span className="text-white/40 uppercase tracking-widest block mb-1">
-                Industry
+                Target Business
               </span>
-              <span className="text-white/90">{project.industry}</span>
+              <span className="text-white/90">{project.businessType}</span>
             </div>
             <div>
               <span className="text-white/40 uppercase tracking-widest block mb-1">
@@ -59,15 +58,15 @@ export default function ProjectDetailPage() {
             </div>
             <div>
               <span className="text-white/40 uppercase tracking-widest block mb-1">
-                Deliverables
+                Status
               </span>
-              <span className="text-white/90">Web, API & Systems</span>
+              <span className="text-white/90">XenForge Prototype Concept</span>
             </div>
             <div>
               <span className="text-white/40 uppercase tracking-widest block mb-1">
-                Year
+                Agency
               </span>
-              <span className="text-white/90">2026 Production</span>
+              <span className="text-white/90">XenForge (2026)</span>
             </div>
           </div>
         </header>
@@ -78,26 +77,26 @@ export default function ProjectDetailPage() {
             <div className="flex items-center justify-between font-mono text-[11px] text-white/40 border-b border-white/10 pb-3">
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                https://{project.slug}.internal/workspace
+                https://{project.slug}.sample.xenforge.com
               </span>
-              <span>VERIFIED PRODUCTION DEPLOYMENT</span>
+              <span>VERIFIED XENFORGE CONCEPT</span>
             </div>
 
-            <div className="my-auto text-center">
+            <div className="my-auto text-center py-6">
               <span className="font-mono text-xs text-white/40 uppercase tracking-widest block mb-2">
-                SYSTEM INTERFACE
+                {project.businessType}
               </span>
               <h2 className="text-3xl sm:text-5xl font-medium text-white tracking-tight">
                 {project.title}
               </h2>
               <p className="text-sm text-white/60 mt-2 max-w-md mx-auto">
-                {project.overview}
+                {project.subtitle}
               </p>
             </div>
 
             <div className="flex items-center justify-between font-mono text-[10px] text-white/30 pt-3 border-t border-white/5">
-              <span>LATENCY: ZERO-DRIFT</span>
               <span>STACK: {project.technologies.join(' · ')}</span>
+              <span>HONEST SAMPLE</span>
             </div>
           </div>
         </div>
@@ -110,33 +109,33 @@ export default function ProjectDetailPage() {
               01 / OVERVIEW
             </span>
             <h2 className="text-2xl sm:text-3xl font-medium text-white mb-4">
-              The Project Brief
+              The Concept Brief
             </h2>
             <p className="text-base sm:text-lg text-white/75 leading-relaxed font-normal">
               {project.overview}
             </p>
           </section>
 
-          {/* Challenge */}
+          {/* Problem It Solves */}
           <section className="pt-12 border-t border-white/10">
             <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-3">
-              02 / THE CHALLENGE
+              02 / THE PROBLEM IT SOLVES
             </span>
             <h2 className="text-2xl sm:text-3xl font-medium text-white mb-4">
-              Where The Friction Was
+              Where Small Businesses Lose Customers
             </h2>
-            <p className="text-base sm:text-lg text-white/75 leading-relaxed font-normal">
-              {project.challenge}
-            </p>
+            <div className="p-6 rounded-xl liquid-glass border border-white/10 text-base text-white/80 leading-relaxed font-normal">
+              {project.problemSolves}
+            </div>
           </section>
 
           {/* Approach & Solution */}
           <section className="pt-12 border-t border-white/10">
             <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-3">
-              03 / APPROACH & ARCHITECTURE
+              03 / HOW WE BUILT THE SOLUTION
             </span>
             <h2 className="text-2xl sm:text-3xl font-medium text-white mb-4">
-              How We Engineered The Solution
+              Design & Technical Architecture
             </h2>
             <p className="text-base sm:text-lg text-white/75 leading-relaxed font-normal mb-6">
               {project.approach}
@@ -152,7 +151,7 @@ export default function ProjectDetailPage() {
               04 / TECHNOLOGY
             </span>
             <h2 className="text-2xl sm:text-3xl font-medium text-white mb-6">
-              The Production Stack
+              Tools & Integrations
             </h2>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
@@ -166,13 +165,13 @@ export default function ProjectDetailPage() {
             </div>
           </section>
 
-          {/* Results (Strictly qualitative & verified, no fake stats) */}
+          {/* Qualitative Results */}
           <section className="pt-12 border-t border-white/10">
             <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-3">
-              05 / PRODUCTION OUTCOMES
+              05 / EXPECTED OPERATIONAL IMPACT
             </span>
             <h2 className="text-2xl sm:text-3xl font-medium text-white mb-6">
-              Operational Changes
+              Direct Customer Outcomes
             </h2>
             <div className="grid grid-cols-1 gap-4">
               {project.qualitativeResults.map((result, idx) => (
@@ -180,10 +179,8 @@ export default function ProjectDetailPage() {
                   key={idx}
                   className="p-5 rounded-xl liquid-glass border border-white/10 flex items-start gap-4"
                 >
-                  <span className="font-mono text-xs text-white/40 mt-0.5">
-                    0{idx + 1}
-                  </span>
-                  <p className="text-sm sm:text-base text-white/80 leading-relaxed">
+                  <CheckCircle2 size={18} className="text-white/60 shrink-0 mt-0.5" />
+                  <p className="text-sm sm:text-base text-white/80 leading-relaxed font-normal">
                     {result}
                   </p>
                 </div>
@@ -196,7 +193,7 @@ export default function ProjectDetailPage() {
         <div className="mt-24 pt-12 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <span className="font-mono text-xs text-white/40 uppercase tracking-widest block mb-1">
-              NEXT CASE STUDY
+              NEXT SAMPLE CONCEPT
             </span>
             <Link
               to={`/work/${nextProject.slug}`}
@@ -211,11 +208,11 @@ export default function ProjectDetailPage() {
           </div>
 
           <Link
-            to="/contact"
-            className="bg-white text-black text-sm font-medium px-6 py-3 rounded-full hover:bg-white/90 transition-colors inline-flex items-center gap-2"
+            to="/audit"
+            className="bg-white text-black text-sm font-medium px-7 py-3.5 rounded-full hover:bg-white/90 transition-colors inline-flex items-center gap-2 shadow-lg"
           >
-            <span>Start a Project Like This</span>
-            <ArrowUpRight size={14} />
+            <span>Request a Free Sample for Your Brand</span>
+            <ArrowUpRight size={15} />
           </Link>
         </div>
       </div>
