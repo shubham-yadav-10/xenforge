@@ -97,7 +97,7 @@ export default function Hero({ onDiscoverClick }: HeroProps) {
         <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-xs font-mono text-white/60">
           <span className="flex items-center gap-1.5">
             <Clock size={13} className="text-emerald-400" />
-            48h Free Sample Turnaround
+            48-Hour Free Audit Turnaround
           </span>
           <span className="flex items-center gap-1.5">
             <Code size={13} className="text-blue-400" />

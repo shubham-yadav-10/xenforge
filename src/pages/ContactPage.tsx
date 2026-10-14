@@ -350,14 +350,6 @@ export default function ContactPage() {
                 </div>
 
                 <div className="pt-3 border-t border-white/10">
-                  <span className="text-xs font-mono text-white/40 block mb-1">Working Hours</span>
-                  <div className="text-white/80 flex items-center gap-2 text-xs font-mono">
-                    <Clock size={13} className="text-white/50" />
-                    <span>Mon–Sat, 10:00 AM – 7:00 PM IST</span>
-                  </div>
-                </div>
-
-                <div className="pt-3 border-t border-white/10">
                   <span className="text-xs font-mono text-white/40 block mb-1">Location</span>
                   <div className="text-white/80 flex items-start gap-2 text-xs">
                     <MapPin size={14} className="text-white/50 shrink-0 mt-0.5" />

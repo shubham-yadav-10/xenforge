@@ -52,7 +52,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-lg font-medium text-white mb-3">4. Quotes, Payments and Invoices</h2>
             <ul className="list-disc pl-5 space-y-1.5 text-white/75">
-              <li>Prices are in Indian Rupees (INR) unless expressly stated, and exclude statutory GST unless itemized.</li>
+              <li>All service fees, milestone payments, and project investments are specified in the applicable written agreement or estimate.</li>
               <li>Unless otherwise agreed in writing, we require a <strong>50% advance</strong> before work begins and the remaining balance prior to final deployment, code handover, or go-live.</li>
               <li>Advance payments cover dedicated sprint time and are non-refundable once work has commenced, as described in Section 10 and our Refund Policy.</li>
             </ul>

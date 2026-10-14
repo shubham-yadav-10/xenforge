@@ -99,8 +99,8 @@ export default function AboutPage() {
             </h3>
             <p className="text-sm sm:text-base text-white/70 leading-relaxed font-normal">
               High-speed conversion websites, intelligent customer chat automations, professional
-              video ad editing, and targeted local SEO shouldn&apos;t require a ₹10 Lakh corporate
-              retainer. We engineer practical, accessible digital foundations built to work.
+              video ad editing, and targeted local SEO shouldn&apos;t require a massive corporate
+              investment. We engineer practical, accessible digital foundations built to work.
             </p>
           </div>
         </section>

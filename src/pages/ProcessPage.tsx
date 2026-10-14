@@ -24,7 +24,7 @@ export default function ProcessPage() {
       subtitle: 'Free prototype & technical blueprint',
       duration: 'Week 1 – 2',
       description:
-        'We build you a tailored free sample mockup before you commit a single rupee. Design systems are constructed, relational schemas are modeled, and conversion pathways are mapped.',
+        'We engineer a tailored strategic preview before you make any financial investment. Design systems are constructed, relational schemas are modeled, and conversion pathways are mapped.',
       deliverables: [
         'Interactive high-fidelity component layouts & sample preview',
         'Relational database schema diagrams & migration plans',

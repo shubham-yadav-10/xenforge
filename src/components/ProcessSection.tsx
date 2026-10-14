@@ -39,7 +39,7 @@ export default function ProcessSection() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 pb-6 border-b border-white/10">
           <div>
             <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-2">
-              03 / HOW IT WORKS
+              05 / HOW IT WORKS
             </span>
             <h2 className="text-3xl sm:text-5xl font-medium tracking-tight text-white">
               HOW IT WORKS

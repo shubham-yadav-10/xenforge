@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUp, Mail, Phone, MapPin, Sparkles } from 'lucide-react';
+import { ArrowUp, Mail, Phone, MapPin, Sparkles, Linkedin, Instagram, Twitter, Github } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -38,6 +38,46 @@ export default function Footer() {
                   +91 98765 43210 (WhatsApp / Call)
                 </a>
               </div>
+            </div>
+
+            {/* Social Media Links Strip */}
+            <div className="mt-6 pt-5 border-t border-white/10 flex items-center gap-3">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-8 h-8 rounded-full liquid-glass border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 transition-all"
+              >
+                <Linkedin size={14} />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-8 h-8 rounded-full liquid-glass border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 transition-all"
+              >
+                <Instagram size={14} />
+              </a>
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (Twitter)"
+                className="w-8 h-8 rounded-full liquid-glass border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 transition-all"
+              >
+                <Twitter size={14} />
+              </a>
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="w-8 h-8 rounded-full liquid-glass border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 transition-all"
+              >
+                <Github size={14} />
+              </a>
             </div>
           </div>
 

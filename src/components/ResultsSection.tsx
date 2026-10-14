@@ -29,7 +29,7 @@ export default function ResultsSection() {
       metric: '48h',
       metricLabel: 'Sample Turnaround',
       headline: 'Free Custom Sample Before Payment',
-      subline: 'Experience the quality before committing a single rupee.',
+      subline: 'Experience the quality before committing any investment.',
       detail:
         'We believe in earning your trust with tangible execution. You see real code, design, and automation tailored to your business before you decide.',
     },

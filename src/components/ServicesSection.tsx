@@ -185,15 +185,10 @@ export default function ServicesSection() {
               <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
                 <Link
                   to={`/services/${activeService.slug}`}
-                  className="text-xs font-mono text-white/70 hover:text-white"
+                  className="text-xs font-mono text-white/70 hover:text-white inline-flex items-center gap-1.5 transition-colors group"
                 >
-                  Learn full scope →
-                </Link>
-                <Link
-                  to="/audit"
-                  className="bg-white text-black text-xs font-medium px-4 py-2 rounded-full hover:bg-white/90 transition-colors"
-                >
-                  Get Free Audit
+                  <span>Explore full {activeService.title} specifications</span>
+                  <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Link>
               </div>
             </div>

@@ -1,11 +1,8 @@
 import Hero from '../components/Hero';
 import Introduction from '../components/Introduction';
 import ServicesSection from '../components/ServicesSection';
-import ProcessSection from '../components/ProcessSection';
 import TestimonialsSection from '../components/TestimonialsSection';
-import AboutSection from '../components/AboutSection';
-import FAQSection from '../components/FAQSection';
-import FinalCTASection from '../components/FinalCTASection';
+import ProcessSection from '../components/ProcessSection';
 
 export default function HomePage() {
   return (
@@ -19,20 +16,11 @@ export default function HomePage() {
       {/* 03 — What We Do (The 4 Core Practices) */}
       <ServicesSection />
 
-      {/* 04 — How It Works (3 Steps: Study, Blueprint, Talk & Decide) */}
-      <ProcessSection />
-
-      {/* 05 — Client Testimonials & Results (Replaces "What We Build") */}
+      {/* 04 — Client Testimonials & Proof (In place of former "What We Build") */}
       <TestimonialsSection />
 
-      {/* 06 — About XenForge (Altered & Focused Founder Studio) */}
-      <AboutSection />
-
-      {/* 07 — Common Enquiries (Separate Standalone FAQ & Enquiries Section) */}
-      <FAQSection />
-
-      {/* 08 — Final Action Banner (Audit in 48 Hours - Zero Penny Upfront) */}
-      <FinalCTASection />
+      {/* 05 — How It Works (3 Steps: Study, Blueprint, Talk & Decide) */}
+      <ProcessSection />
     </div>
   );
 }
