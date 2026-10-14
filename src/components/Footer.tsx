@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUp, Mail, Phone, MapPin, Sparkles, Linkedin, Instagram, Twitter, Github } from 'lucide-react';
+import { ArrowUp, Mail, Phone, MapPin, Linkedin, Instagram, Twitter, Github } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -52,7 +52,7 @@ export default function Footer() {
                 <Linkedin size={14} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/xen.forge?stkn=MWN1aGllazc3OWp3NQ%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -108,14 +108,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/audit" className="text-white/90 hover:text-white transition-colors flex items-center gap-1.5 font-medium">
-                  <Sparkles size={12} className="text-white/70" />
-                  <span>Free Audit</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-white/70 hover:text-white transition-colors">
-                  Contact
+                <Link to="/audit" className="text-white/70 hover:text-white transition-colors">
+                  Free Audit
                 </Link>
               </li>
             </ul>

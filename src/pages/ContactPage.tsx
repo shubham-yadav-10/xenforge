@@ -362,7 +362,7 @@ export default function ContactPage() {
             <div className="liquid-glass rounded-2xl p-6 border border-white/10 text-xs font-mono text-white/50 space-y-2">
               <span className="text-white font-medium block">Social Media Channels</span>
               <div className="flex gap-4 pt-1 text-white/70">
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                <a href="https://www.instagram.com/xen.forge?stkn=MWN1aGllazc3OWp3NQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                   Instagram
                 </a>
                 <span>·</span>
