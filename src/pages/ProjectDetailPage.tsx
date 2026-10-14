@@ -211,7 +211,7 @@ export default function ProjectDetailPage() {
             to="/audit"
             className="bg-white text-black text-sm font-medium px-7 py-3.5 rounded-full hover:bg-white/90 transition-colors inline-flex items-center gap-2 shadow-lg"
           >
-            <span>Request a Free Sample for Your Brand</span>
+            <span>Get a Free Business Audit</span>
             <ArrowUpRight size={15} />
           </Link>
         </div>

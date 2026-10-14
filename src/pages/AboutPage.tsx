@@ -5,7 +5,7 @@ export default function AboutPage() {
   const values = [
     {
       title: 'Show, don’t just tell.',
-      desc: 'We prove our value with real work before you commit. We build you a free sample before asking for a rupee.',
+      desc: 'We prove our value with real strategic insights before you commit. We demonstrate concrete solutions before asking for a single penny.',
     },
     {
       title: 'Honest advice.',
@@ -170,14 +170,14 @@ export default function AboutPage() {
             Ready to see what we can do for your business?
           </h2>
           <p className="text-sm text-white/60 mb-8 max-w-md mx-auto">
-            Get a free audit and a tailored sample mockup before making any financial commitment.
+            Get a free comprehensive business audit before making any financial commitment.
           </p>
           <Link
             to="/audit"
             className="bg-white text-black text-sm font-medium px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors inline-flex items-center gap-2 shadow-lg"
           >
             <Sparkles size={15} />
-            <span>Request Your Free Audit & Sample</span>
+            <span>Get Your Free Business Audit</span>
           </Link>
         </div>
       </div>

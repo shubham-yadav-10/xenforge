@@ -42,7 +42,7 @@ export const servicesData: ServiceItem[] = [
     perfectFor:
       'Restaurants, salons, boutiques, coaches, clinics, real-estate agents, creators, and any business with no website or an outdated one.',
     technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'WordPress / Headless'],
-    ctaText: 'Get a Free Website Sample',
+    ctaText: 'Explore Web Solutions',
     capabilities: [
       'Custom Brand-Matched Design',
       'Sub-Second Mobile Load Times',
@@ -143,7 +143,7 @@ export const servicesData: ServiceItem[] = [
     perfectFor:
       'Founders, creators, restaurants, fitness studios, and e-commerce brands wanting to command attention on modern social platforms.',
     technologies: ['Premiere Pro', 'After Effects', 'DaVinci Resolve', 'CapCut Pro', 'Cinema 4D'],
-    ctaText: 'Send Footage for a Sample Reel',
+    ctaText: 'Start Video Project',
     capabilities: [
       'Scroll-Stopping First 3-Second Hooks',
       'Dynamic Animated Captions & Subtitles',

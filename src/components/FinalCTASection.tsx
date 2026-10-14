@@ -18,8 +18,8 @@ export default function FinalCTASection() {
         </h2>
 
         <p className="text-base sm:text-xl text-white/70 max-w-xl mx-auto mb-10 leading-relaxed font-normal">
-          Tell us about your business and we&apos;ll send you a free audit within 48 hours.
-          See what&apos;s working, what&apos;s costing you customers, and a sample of what we&apos;d build.
+          Tell us about your business and we&apos;ll send you a comprehensive audit within 48 hours.
+          See what&apos;s working, what&apos;s costing you customers, and how to scale your revenue.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
@@ -45,7 +45,7 @@ export default function FinalCTASection() {
           <span>·</span>
           <span>HONEST ADVICE</span>
           <span>·</span>
-          <span>NO CREDIT CARD OR RUPEE REQUIRED</span>
+          <span>NO CREDIT CARD OR PENNY UPFRONT</span>
         </div>
       </div>
     </section>

@@ -32,7 +32,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-white selection:text-black">
+      <div className="min-h-screen bg-[#111214] text-white flex flex-col font-sans selection:bg-[#111214] selection:text-[#F4F1EA]">
         {/* Persistent Liquid Glass Floating Navbar */}
         <Navbar />
 

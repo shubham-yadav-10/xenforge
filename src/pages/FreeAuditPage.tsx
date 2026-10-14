@@ -81,7 +81,7 @@ export default function FreeAuditPage() {
                 <p className="text-sm text-white/80 max-w-md mx-auto mb-6 leading-relaxed">
                   Thanks, <strong className="text-white">{formData.name}</strong>! We are now analyzing{' '}
                   <strong className="text-white">{formData.businessName}</strong> ({formData.link}).
-                  We will deliver your free audit report and mock sample to{' '}
+                  We will deliver your comprehensive free audit report to{' '}
                   <strong className="text-white">{formData.email}</strong> within <strong>48 hours</strong>.
                 </p>
 
@@ -237,7 +237,7 @@ export default function FreeAuditPage() {
                     disabled={isSubmitting}
                     className="w-full bg-white text-black text-sm font-medium py-4 rounded-full hover:bg-white/90 transition-colors inline-flex items-center justify-center gap-2 shadow-lg cursor-pointer disabled:opacity-50"
                   >
-                    <span>{isSubmitting ? 'ANALYZING & SENDING...' : 'SEND MY FREE AUDIT & SAMPLE →'}</span>
+                    <span>{isSubmitting ? 'ANALYZING & SENDING...' : 'GET MY FREE BUSINESS AUDIT →'}</span>
                   </button>
                   <p className="text-center text-[11px] font-mono text-white/40 mt-3">
                     100% Free · No credit card required · Delivered within 48 hours

@@ -60,9 +60,9 @@ export default function Introduction() {
                 &ldquo;We show, we don&apos;t just tell.&rdquo;
               </h3>
               <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl font-normal">
-                Before we ask for a rupee, we study your business and build a sample of your
-                solution, such as a homepage mockup for your brand. You see exactly what you&apos;re
-                getting before you decide.
+                Before you spend a single penny, we study your business and map out your digital
+                growth strategy. You see a clear preview of the exact solution we would engineer for
+                your brand before you make any commitment.
               </p>
             </div>
 
@@ -71,7 +71,7 @@ export default function Introduction() {
                 to="/audit"
                 className="bg-white text-black text-xs sm:text-sm font-medium px-6 py-3.5 rounded-full hover:bg-white/90 transition-colors inline-flex items-center justify-center gap-2 shadow-lg"
               >
-                <span>Claim Your Free Sample</span>
+                <span>Get a Free Business Audit</span>
                 <ArrowRight size={14} />
               </Link>
               <Link

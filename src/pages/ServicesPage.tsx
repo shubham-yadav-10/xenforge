@@ -4,7 +4,7 @@ import { servicesData } from '../data/servicesData';
 
 export default function ServicesPage() {
   return (
-    <div className="pt-32 pb-24 px-6 sm:px-12 bg-black min-h-screen text-white">
+    <div className="pt-32 pb-24 px-6 sm:px-12 bg-[#111214] min-h-screen text-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-20 pb-8 border-b border-white/10">

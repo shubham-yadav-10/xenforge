@@ -9,7 +9,7 @@ export const faqData: FAQItem[] = [
     id: '01',
     question: 'How does a project start?',
     answer:
-      'We start with a free business audit. We research your market, your competitors, and the digital gaps costing you customers. Before we ask for a single rupee, we build a free sample of your solution (like a homepage mockup or automation demo) so you see exactly what you are getting before you decide.',
+      'We start with a free business audit. We research your market, your competitors, and the digital gaps costing you customers. Before you spend a single penny, we deliver an actionable assessment and a strategic growth blueprint so you see exactly what you are getting before you decide.',
   },
   {
     id: '02',
@@ -37,9 +37,9 @@ export const faqData: FAQItem[] = [
   },
   {
     id: '06',
-    question: 'How does the free audit and free sample work?',
+    question: 'How does the free business audit work?',
     answer:
-      'Simply share your business name and Instagram or website link through our Free Audit form. Within 48 hours, we send you a clear breakdown of what is working, what is costing you customers, and a sample preview of the solution we would build for you. There is zero pressure and zero obligation.',
+      'Simply share your business name and Instagram or website link through our Free Audit form. Within 48 hours, we send you a clear breakdown of what is working, what is costing you customers, and a strategic roadmap tailored to your business. There is zero pressure and zero obligation.',
   },
   {
     id: '07',

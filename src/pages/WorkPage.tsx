@@ -21,14 +21,14 @@ export default function WorkPage() {
         {/* Page Introduction */}
         <div className="mb-16 pb-8 border-b border-white/10">
           <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-3">
-            SAMPLE WORK SHOWCASE & CONCEPTS
+            PORTFOLIO & CASE CONCEPTS
           </span>
           <h1 className="text-4xl sm:text-6xl font-medium tracking-tight text-white mb-6">
             WHAT WE BUILD.
           </h1>
           <p className="text-base sm:text-xl text-white/70 max-w-2xl font-normal leading-relaxed">
-            Honest sample concepts and prototypes engineered by XenForge. Before you pay a single
-            rupee, we study your business and create a tailored preview of your solution.
+            Case studies, systems and prototypes engineered by XenForge. Before you pay a single
+            penny, we study your business and create a tailored preview of your solution.
           </p>
 
           {/* Category Filter Controls */}
@@ -174,17 +174,17 @@ export default function WorkPage() {
         {/* Bottom Page CTA */}
         <div className="mt-24 pt-12 border-t border-white/10 text-center">
           <h3 className="text-2xl sm:text-3xl font-medium text-white mb-3">
-            Want to see a custom sample for your business?
+            Want to see what we can engineer for your business?
           </h3>
           <p className="text-sm text-white/60 mb-8 max-w-md mx-auto">
-            Tell us about your brand. We&apos;ll research your competitors and send you a real mockup within 48 hours.
+            Tell us about your brand. We&apos;ll research your market and deliver an actionable growth audit within 48 hours.
           </p>
           <Link
             to="/audit"
             className="bg-white text-black text-sm font-medium px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors inline-flex items-center gap-2 shadow-lg"
           >
             <Sparkles size={15} />
-            <span>Get a Free Business Audit & Sample</span>
+            <span>Get a Free Business Audit</span>
           </Link>
         </div>
       </div>

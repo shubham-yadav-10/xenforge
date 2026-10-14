@@ -13,10 +13,10 @@ export default function ProcessSection() {
     },
     {
       number: '02',
-      title: 'We build you a free sample.',
+      title: 'We map your tailored solution.',
       icon: LayoutTemplate,
       description:
-        'A real preview of the website, automation or creative we’d make for you. Before you commit a single rupee, you see your brand in action on modern software.',
+        'A concrete strategic preview of the website, automation system or creative campaign engineered for your brand. Before you commit a single penny, you see your brand in action with modern technology.',
       highlight: 'Delivered in 48 hours',
     },
     {
@@ -24,7 +24,7 @@ export default function ProcessSection() {
       title: 'We talk, and you decide.',
       icon: Coffee,
       description:
-        'A short online meeting to walk you through it. No pressure, no pushy sales tactics. If you love the direction, we partner. If not, the audit and insights remain yours.',
+        'A short, focused meeting to walk you through the insights and live prototype. No pressure, no pushy sales tactics. If you love the direction, we partner. If not, the roadmap is yours.',
       highlight: 'Zero sales pressure',
     },
   ];
@@ -91,17 +91,17 @@ export default function ProcessSection() {
         <div className="liquid-glass rounded-2xl p-8 sm:p-10 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-white/50 block mb-1">
-              READY TO SEE YOUR SAMPLE?
+              READY TO ACCELERATE YOUR GROWTH?
             </span>
             <h4 className="text-xl sm:text-2xl font-medium text-white">
-              Tell us about your brand and receive your tailored mockup.
+              Tell us about your brand and receive your tailored business audit report.
             </h4>
           </div>
           <Link
             to="/audit"
-            className="bg-white text-black text-xs sm:text-sm font-medium px-6 py-3 rounded-full hover:bg-white/90 transition-colors inline-flex items-center gap-2 whitespace-nowrap shadow-md"
+            className="bg-white text-black text-xs sm:text-sm font-medium px-6 py-3 rounded-full hover:bg-white/90 transition-colors inline-flex items-center gap-2 whitespace-nowrap shadow-md cursor-pointer"
           >
-            <span>Request Free Sample & Audit</span>
+            <span>Get a Free Business Audit</span>
             <ArrowRight size={14} />
           </Link>
         </div>

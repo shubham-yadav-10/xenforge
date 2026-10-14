@@ -7,7 +7,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-black text-white pt-20 pb-12 px-6 sm:px-12 border-t border-white/10 overflow-hidden">
+    <footer className="relative bg-[#111214] text-white pt-20 pb-12 px-6 sm:px-12 border-t border-white/10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">

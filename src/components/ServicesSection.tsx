@@ -193,7 +193,7 @@ export default function ServicesSection() {
                   to="/audit"
                   className="bg-white text-black text-xs font-medium px-4 py-2 rounded-full hover:bg-white/90 transition-colors"
                 >
-                  Request Sample
+                  Get Free Audit
                 </Link>
               </div>
             </div>

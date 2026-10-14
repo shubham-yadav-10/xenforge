@@ -46,7 +46,7 @@ export default function CookieBanner() {
 
   return (
     <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50">
-      <div className="liquid-glass rounded-2xl p-5 border border-white/20 shadow-2xl backdrop-blur-2xl text-white">
+      <div className="bg-[#111214]/95 rounded-2xl p-5 border border-white/15 shadow-2xl backdrop-blur-2xl text-white">
         {!showManage ? (
           <div>
             <div className="flex items-start justify-between gap-3 mb-2">
