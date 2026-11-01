@@ -20,7 +20,6 @@ export default function FreeAuditPage() {
     const errs: Record<string, string> = {};
     if (!formData.name.trim()) errs.name = 'Please enter your name.';
     if (!formData.businessName.trim()) errs.businessName = 'Please enter your business or brand name.';
-    if (!formData.link.trim()) errs.link = 'Please provide your Instagram handle or website link.';
     if (!formData.email.trim()) {
       errs.email = 'Please provide your email address.';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -150,7 +149,7 @@ export default function FreeAuditPage() {
 
                 <div>
                   <label className="block text-xs font-mono text-white/60 uppercase tracking-widest mb-2">
-                    Instagram Handle or Website Link *
+                    Instagram Handle or Website Link
                   </label>
                   <input
                     type="text"
@@ -187,7 +186,7 @@ export default function FreeAuditPage() {
 
                   <div>
                     <label className="block text-xs font-mono text-white/60 uppercase tracking-widest mb-2">
-                      Phone / WhatsApp (Optional)
+                      Phone / WhatsApp
                     </label>
                     <input
                       type="text"
@@ -211,6 +210,7 @@ export default function FreeAuditPage() {
                     className="w-full bg-black/80 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/30"
                   >
                     <option value="Website Development">Website Development</option>
+                    <option value="App Development">App Development (iOS & Android Apps)</option>
                     <option value="AI Automation">AI Automation (Chatbots & Workflows)</option>
                     <option value="Digital Marketing">Digital Marketing & SEO</option>
                     <option value="Video Editing">Video Editing (Reels & Ads)</option>
@@ -289,7 +289,7 @@ export default function FreeAuditPage() {
 
             <div className="liquid-glass rounded-2xl p-6 border border-white/10 text-xs font-mono text-white/50 space-y-2">
               <div className="text-white font-medium">Prefer a direct conversation?</div>
-              <p>Book a 20-minute video discussion with Shubham and the XenForge team.</p>
+              <p>Book a 20-minute video discussion with the XenForge team.</p>
               <div className="pt-2">
                 <a
                   href="mailto:hello@xenforge.com?subject=Inquiry%20from%20Website"

@@ -55,6 +55,41 @@ export const servicesData: ServiceItem[] = [
   {
     id: '02',
     number: '02',
+    slug: 'app-development',
+    title: 'App Development',
+    tagline: 'High-performance mobile and cross-platform apps.',
+    shortDesc: 'Native iOS, Android and web apps built for speed, offline reliability and scale.',
+    heading: 'MOBILE & CROSS-PLATFORM APPS ENGINEERED FOR RETENTION.',
+    copy: 'From native mobile experiences to robust cross-platform applications, we build intuitive, high-performance apps that your customers love to open every single day.',
+    problemStatement:
+      'Off-the-shelf app templates produce sluggish, clunky apps with high battery drain and endless bugs that cause users to abandon them within 24 hours.',
+    solutionStatement:
+      'We engineer lightweight, native-feel iOS & Android applications using modern frameworks, featuring smooth 60fps animations, instant offline sync, and secure API architectures.',
+    includes: [
+      'Native iOS & Android mobile applications',
+      'Cross-platform React Native & Flutter apps',
+      'Offline-first data sync & local caching',
+      'Secure user authentication & biometric login',
+      'Push notifications & deep linking workflows',
+      'App Store & Google Play submission and approval',
+      'Real-time backend API & database integration',
+    ],
+    perfectFor:
+      'Startups, booking platforms, fitness studios, service businesses, marketplaces, and brands needing a dedicated app presence.',
+    technologies: ['React Native', 'Flutter', 'Swift / iOS', 'Kotlin / Android', 'Node.js', 'PostgreSQL'],
+    ctaText: 'Build Your Mobile App',
+    capabilities: [
+      'Cross-Platform iOS & Android Deployments',
+      'Offline-First Local Storage Engine',
+      'Apple App Store & Play Store Compliance',
+      'Biometric FaceID & Social Auth',
+      'Automated Push Notification Triggers',
+      'Zero-Lag 60 FPS Micro-Interactions',
+    ],
+  },
+  {
+    id: '03',
+    number: '03',
     slug: 'ai-automation',
     title: 'AI Automation',
     tagline: 'Let AI handle the repetitive work.',
@@ -86,8 +121,8 @@ export const servicesData: ServiceItem[] = [
     ],
   },
   {
-    id: '03',
-    number: '03',
+    id: '04',
+    number: '04',
     slug: 'digital-marketing',
     title: 'Digital Marketing',
     tagline: 'Get found. Get remembered. Get customers.',
@@ -120,8 +155,8 @@ export const servicesData: ServiceItem[] = [
     ],
   },
   {
-    id: '04',
-    number: '04',
+    id: '05',
+    number: '05',
     slug: 'video-editing',
     title: 'Video Editing',
     tagline: 'Videos that people actually watch.',

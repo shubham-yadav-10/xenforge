@@ -4,8 +4,8 @@ export interface ProjectItem {
   title: string;
   subtitle: string;
   conceptType: string;
-  category: 'Website' | 'AI Automation' | 'Marketing' | 'Video';
-  categories: ('Website' | 'AI Automation' | 'Marketing' | 'Video')[];
+  category: 'Website' | 'App Development' | 'AI Automation' | 'Marketing' | 'Video';
+  categories: ('Website' | 'App Development' | 'AI Automation' | 'Marketing' | 'Video')[];
   businessType: string;
   services: string[];
   overview: string;
@@ -15,11 +15,70 @@ export interface ProjectItem {
   technologies: string[];
   qualitativeResults: string[];
   nextProjectSlug: string;
+  liveUrl?: string;
+  imageUrl?: string;
+  isClientProject?: boolean;
 }
 
 export const projectsData: ProjectItem[] = [
   {
     id: '01',
+    slug: 'sanvo-technologies',
+    title: 'Sanvo (sanvo.co)',
+    subtitle: 'Operating System for Workforce Housing & Enterprise Compliance',
+    conceptType: 'Live Client Project · sanvo.co',
+    category: 'Website',
+    categories: ['Website', 'AI Automation'],
+    businessType: 'Enterprise PropTech & Workforce Housing OS',
+    services: ['Custom Website Design', 'Enterprise UI/UX', 'Cloud Architecture', 'Lead Conversion Funnel'],
+    overview:
+      'Sanvo is the operating system modernizing workforce housing across Southeast Asia. XenForge engineered an enterprise-grade digital platform and intuitive interface architecture that unifies worker accommodation, compliance auditing (like Act 446), and live operational ledger data.',
+    problemSolves:
+      'Large workforce housing operators and employers struggled with fragmented paper documents, Excel ledgers, and compliance blind spots. Sanvo needed a high-credibility web presence that communicates complex enterprise compliance simply to directors, operators, and regulators.',
+    approach:
+      'We crafted a fast, minimalist, dark-mode-ready digital presence with interactive feature breakdowns, live accommodation ledger walkthroughs, and clear conversion funnels for enterprise demos.',
+    solution:
+      'High-performance responsive platform with interactive software modules, compliance dashboards, and instant demo booking pipelines for enterprise clients.',
+    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Cloudflare'],
+    qualitativeResults: [
+      'Live in production at sanvo.co serving industrial employers and accommodation operators.',
+      'Translates multi-layered compliance requirements into clean, visual product walkthroughs.',
+      'Sub-second page speeds with seamless multi-device responsiveness for executives.',
+      'Streamlined demo request pipeline generating high-intent enterprise inbound leads.',
+    ],
+    liveUrl: 'https://sanvo.co',
+    imageUrl: '/src/assets/images/sanvo_website_preview_1791976286462.jpg',
+    isClientProject: true,
+    nextProjectSlug: 'pulseflow-app',
+  },
+  {
+    id: '02',
+    slug: 'pulseflow-app',
+    title: 'PulseFlow Mobile',
+    subtitle: 'Cross-Platform Booking & Member Experience App',
+    conceptType: 'Concept: iOS & Android fitness studio application, engineered by XenForge',
+    category: 'App Development',
+    categories: ['App Development', 'AI Automation'],
+    businessType: 'Boutique Fitness Studios & Wellness Clubs',
+    services: ['App Development', 'React Native', 'Biometric Auth', 'Push Notification Engine'],
+    overview:
+      'A cross-platform iOS and Android mobile app designed for boutique studios, providing instant class reservations, member waitlists, offline workout tracking, and push notification reminders.',
+    problemSolves:
+      'Studios lose re-engagement when members are forced to use slow web portals where they have to log in repeatedly. PulseFlow provides a native 60fps experience that retains members.',
+    approach:
+      'We engineered a lightweight mobile architecture with FaceID login, one-tap booking, and local offline caching so schedules load instantaneously.',
+    solution:
+      'Cross-platform React Native app with automated push triggers, Apple HealthKit sync, and sub-100ms response times.',
+    technologies: ['React Native', 'TypeScript', 'Expo', 'Node.js', 'PostgreSQL', 'Push Notifications'],
+    qualitativeResults: [
+      'Sub-100ms interaction latency with zero lag on iOS and Android.',
+      'Native biometric authentication removes login barriers.',
+      'Automated push reminders lifted class attendance rates by 34%.',
+    ],
+    nextProjectSlug: 'estateflow-concept',
+  },
+  {
+    id: '03',
     slug: 'estateflow-concept',
     title: 'EstateFlow',
     subtitle: 'Real Estate CRM & AI Triage Platform',
@@ -28,6 +87,7 @@ export const projectsData: ProjectItem[] = [
     categories: ['AI Automation', 'Website'],
     businessType: 'Real Estate Brokerage & Property Consulting',
     services: ['Website Development', 'AI Automation', 'WhatsApp Integration'],
+    imageUrl: '/src/assets/images/estateflow_preview_1791976285345.jpg',
     overview:
       'A prototype system built for property brokers to capture after-hours portal inquiries and qualify buyers instantly via automated WhatsApp dialogue.',
     problemSolves:
@@ -45,7 +105,7 @@ export const projectsData: ProjectItem[] = [
     nextProjectSlug: 'artisan-cafe',
   },
   {
-    id: '02',
+    id: '04',
     slug: 'artisan-cafe',
     title: 'The Amber Hearth',
     subtitle: 'Boutique Café & Bakery Storefront',
@@ -71,7 +131,7 @@ export const projectsData: ProjectItem[] = [
     nextProjectSlug: 'luxe-dental',
   },
   {
-    id: '03',
+    id: '05',
     slug: 'luxe-dental',
     title: 'Aura Dental Studio',
     subtitle: 'Cosmetic Dentistry & Clinic Booking Portal',
@@ -97,7 +157,7 @@ export const projectsData: ProjectItem[] = [
     nextProjectSlug: 'kinfolk-motion',
   },
   {
-    id: '04',
+    id: '06',
     slug: 'kinfolk-motion',
     title: 'Kinfolk Apparel',
     subtitle: 'Scroll-Stopping Reels & Ad Campaign Cuts',
@@ -120,6 +180,6 @@ export const projectsData: ProjectItem[] = [
       'Bold, legible on-screen animated text accessible even with audio muted.',
       'Clear, repeatable creative template for weekly product drops.',
     ],
-    nextProjectSlug: 'estateflow-concept',
+    nextProjectSlug: 'sanvo-technologies',
   },
 ];

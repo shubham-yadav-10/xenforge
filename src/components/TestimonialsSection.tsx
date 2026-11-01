@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Star, Quote, ArrowRight, Sparkles, CheckCircle2, TrendingUp } from 'lucide-react';
+import { Star, TrendingUp } from 'lucide-react';
 
 interface TestimonialItem {
   id: string;
@@ -17,6 +16,18 @@ interface TestimonialItem {
 const testimonials: TestimonialItem[] = [
   {
     id: '01',
+    name: 'Sanvo Technologies',
+    role: 'Enterprise Workforce Housing OS',
+    company: 'Sanvo (sanvo.co)',
+    industry: 'Enterprise PropTech',
+    metric: '100% Live',
+    metricLabel: 'Enterprise Platform at sanvo.co',
+    quote:
+      'XenForge engineered the digital platform and enterprise architecture for sanvo.co. They translated complex workforce accommodation ledgers and compliance standards into a fast, intuitive web presence that establishes instant credibility with operators and regulators.',
+    serviceUsed: 'Custom Web Platform + Enterprise UI/UX',
+  },
+  {
+    id: '02',
     name: 'Aarav Mehta',
     role: 'Founder & Head Roaster',
     company: 'Artisan Roast Labs',
@@ -28,7 +39,7 @@ const testimonials: TestimonialItem[] = [
     serviceUsed: 'Web Development + WhatsApp Ordering',
   },
   {
-    id: '02',
+    id: '03',
     name: 'Priya Sundaram',
     role: 'Managing Partner',
     company: 'Aura Living Spaces',
@@ -40,7 +51,7 @@ const testimonials: TestimonialItem[] = [
     serviceUsed: 'AI Lead Qualification + CRM Automation',
   },
   {
-    id: '03',
+    id: '04',
     name: 'Dr. Devansh Kapoor',
     role: 'Clinical Director',
     company: 'Apex Smile & Aesthetics',
@@ -52,7 +63,7 @@ const testimonials: TestimonialItem[] = [
     serviceUsed: 'High-Performance Web App + Local SEO',
   },
   {
-    id: '04',
+    id: '05',
     name: 'Sneha Roy',
     role: 'Creative Director',
     company: 'Verve Studio Wear',
@@ -64,7 +75,7 @@ const testimonials: TestimonialItem[] = [
     serviceUsed: 'Video Creative + Performance Marketing',
   },
   {
-    id: '05',
+    id: '06',
     name: 'Vikram Singhania',
     role: 'Chief Operating Officer',
     company: 'LogiTrans Freight Systems',
@@ -76,7 +87,7 @@ const testimonials: TestimonialItem[] = [
     serviceUsed: 'Workflow Automation + Status Dispatch',
   },
   {
-    id: '06',
+    id: '07',
     name: 'Kavita Raman',
     role: 'Founder',
     company: 'Nectar Organics',
@@ -92,7 +103,14 @@ const testimonials: TestimonialItem[] = [
 export default function TestimonialsSection() {
   const [filter, setFilter] = useState<string>('All');
 
-  const industries = ['All', 'Specialty Café & D2C', 'Boutique Real Estate', 'Healthcare & Aesthetic Clinic', 'Fashion & Direct-to-Consumer'];
+  const industries = [
+    'All',
+    'Enterprise PropTech',
+    'Specialty Café & D2C',
+    'Boutique Real Estate',
+    'Healthcare & Aesthetic Clinic',
+    'Fashion & Direct-to-Consumer',
+  ];
 
   const filteredTestimonials =
     filter === 'All'
@@ -106,7 +124,7 @@ export default function TestimonialsSection() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 pb-6 border-b border-white/10">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 pb-6 border-b border-white/10">
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="font-mono text-xs uppercase tracking-widest text-white/40">
@@ -117,7 +135,7 @@ export default function TestimonialsSection() {
                 <Star size={11} className="fill-white text-white" /> 5.0 RATED
               </span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-medium tracking-tight text-white">
+            <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight text-white">
               WHAT FOUNDERS SAY.
             </h2>
           </div>
@@ -127,15 +145,32 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        {/* Testimonials Grid (6 authentic reviews) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        {/* Filter Pills */}
+        <div className="flex flex-wrap items-center gap-2 mb-10">
+          {industries.map((ind) => (
+            <button
+              key={ind}
+              onClick={() => setFilter(ind)}
+              className={`px-3 py-1.5 rounded-full text-xs font-mono transition-all cursor-pointer ${
+                filter === ind
+                  ? 'bg-white text-black font-medium'
+                  : 'bg-white/5 text-white/60 hover:text-white hover:bg-white/10 border border-white/5'
+              }`}
+            >
+              {ind}
+            </button>
+          ))}
+        </div>
+
+        {/* Testimonials Grid (Authentic reviews with sanvo.co at #01) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredTestimonials.map((item) => (
             <div
               key={item.id}
               className="liquid-glass rounded-2xl p-7 sm:p-8 border border-white/10 flex flex-col justify-between hover:border-white/20 transition-all duration-300 group"
             >
               <div>
-                {/* Metric pill & Industry */}
+                {/* Metric pill & Star Rating */}
                 <div className="flex items-center justify-between gap-3 mb-6">
                   <span className="text-[11px] font-mono text-white/50 px-2.5 py-1 rounded bg-white/5 border border-white/5">
                     {item.industry}
@@ -171,9 +206,9 @@ export default function TestimonialsSection() {
               {/* Author & Service */}
               <div className="pt-4 border-t border-white/10 flex items-center justify-between">
                 <div>
-                  <h4 className="text-sm font-medium text-white group-hover:text-white transition-colors">
+                  <h3 className="text-sm font-medium text-white group-hover:text-white transition-colors">
                     {item.name}
-                  </h4>
+                  </h3>
                   <p className="text-xs text-white/50">
                     {item.role}, <span className="text-white/70">{item.company}</span>
                   </p>
@@ -184,32 +219,6 @@ export default function TestimonialsSection() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Trust Badges Strip */}
-        <div className="liquid-glass rounded-2xl p-6 sm:p-8 border border-white/10 flex flex-wrap items-center justify-between gap-6">
-          <div className="flex flex-wrap items-center gap-6 sm:gap-10 text-xs font-mono text-white/60">
-            <div className="flex items-center gap-2">
-              <CheckCircle2 size={16} className="text-white" />
-              <span>100% Code & Data Ownership</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 size={16} className="text-white" />
-              <span>14-Day Average Delivery</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 size={16} className="text-white" />
-              <span>Zero Penny Upfront Commitment</span>
-            </div>
-          </div>
-
-          <Link
-            to="/audit"
-            className="bg-white text-black text-xs sm:text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/90 transition-colors inline-flex items-center gap-2 shadow-sm whitespace-nowrap cursor-pointer"
-          >
-            <Sparkles size={13} />
-            <span>Get Your Free Business Audit</span>
-          </Link>
         </div>
       </div>
     </section>

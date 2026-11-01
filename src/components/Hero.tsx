@@ -45,8 +45,8 @@ export default function Hero({ onDiscoverClick }: HeroProps) {
       />
 
       {/* Layered cinematic contrast overlays for readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/40 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/60 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/30 to-black/50 pointer-events-none" />
 
       {/* Spacer for navbar */}
       <div className="pt-28 sm:pt-36" />
@@ -61,18 +61,18 @@ export default function Hero({ onDiscoverClick }: HeroProps) {
           <span className="text-white/60">India & Worldwide</span>
         </div>
 
-        {/* Content Pack Headline */}
-        <h1 className="text-white text-4xl sm:text-6xl lg:text-7xl font-medium leading-[1.08] tracking-tight mb-6">
+        {/* Refined High-Impact Main Headline */}
+        <h1 className="text-white text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.06] tracking-tight mb-6">
           We Forge Digital Growth for{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/95 to-white/70">
             Ambitious Businesses.
           </span>
         </h1>
 
-        {/* Content Pack Sub-headline */}
+        {/* Refined Supporting Sub-headline */}
         <p className="text-white/80 text-base sm:text-xl leading-relaxed mb-8 max-w-2xl font-normal">
-          Websites, AI automation, marketing and video — all under one roof. XenForge helps
-          growing brands get online, get noticed and get customers.
+          Websites, mobile apps, AI automation, marketing and video — all engineered under one roof.
+          XenForge helps growing brands get online, get noticed, and win customers.
         </p>
 
         {/* Action Buttons */}
@@ -88,7 +88,7 @@ export default function Hero({ onDiscoverClick }: HeroProps) {
             onClick={handleScrollToServices}
             className="liquid-glass text-white text-sm sm:text-base font-medium px-7 sm:px-8 py-4 rounded-full hover:bg-white/10 transition-colors cursor-pointer border border-white/15 inline-flex items-center gap-2"
           >
-            <span>Explore 4 Core Practices</span>
+            <span>Explore 5 Core Practices</span>
             <ChevronDown size={15} />
           </button>
         </div>
@@ -110,16 +110,20 @@ export default function Hero({ onDiscoverClick }: HeroProps) {
         </div>
       </div>
 
-      {/* Trust Strip under hero */}
+      {/* Trust Strip under hero with all 5 core disciplines */}
       <div className="relative z-20 w-full border-t border-white/10 bg-black/60 backdrop-blur-md px-6 sm:px-12 py-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono text-white/70">
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-5 gap-y-2">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-2">
             <span className="text-white font-medium flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              Four Core Disciplines:
+              Five Core Disciplines:
             </span>
             <span className="text-white/80 hover:text-white transition-colors">
               Website Development
+            </span>
+            <span className="text-white/20">·</span>
+            <span className="text-white/80 hover:text-white transition-colors">
+              App Development
             </span>
             <span className="text-white/20">·</span>
             <span className="text-white/80 hover:text-white transition-colors">
@@ -137,7 +141,7 @@ export default function Hero({ onDiscoverClick }: HeroProps) {
 
           <button
             onClick={handleScrollToProblem}
-            className="flex items-center gap-1.5 text-white/50 hover:text-white transition-colors cursor-pointer group"
+            className="flex items-center gap-1.5 text-white/50 hover:text-white transition-colors cursor-pointer group shrink-0"
           >
             <span>The Problem We Solve</span>
             <ChevronDown size={14} className="group-hover:translate-y-0.5 transition-transform" />

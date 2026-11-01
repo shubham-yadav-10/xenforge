@@ -23,46 +23,46 @@ export default function ServicesSection() {
             <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-2">
               02 / WHAT WE DO
             </span>
-            <h2 className="text-3xl sm:text-5xl font-medium tracking-tight text-white">
+            <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight text-white">
               WHAT WE DO
             </h2>
           </div>
           <p className="text-sm sm:text-base text-white/60 max-w-md">
-            Everything your business needs to look professional, work smarter and grow online.
-            Choose one service or combine them all.
+            Everything your business needs to look professional, work smarter, and scale online.
+            Choose individual practices or combine them into a single roadmap.
           </p>
         </div>
 
-        {/* 4 Cards Grid - Direct Representation of Content Pack */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {/* 5 Cards Grid - Clean, responsive layout for all 5 core practices */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 mb-16">
           {servicesData.map((service) => (
             <Link
               key={service.id}
               to={`/services/${service.slug}`}
-              className="group liquid-glass rounded-2xl p-7 border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between"
+              className="group liquid-glass rounded-2xl p-6 border border-white/10 hover:border-white/25 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between text-xs font-mono text-white/40 mb-5">
-                  <span>0{service.id}</span>
+                <div className="flex items-center justify-between text-xs font-mono text-white/40 mb-4">
+                  <span>{service.number}</span>
                   <ArrowUpRight
                     size={16}
                     className="text-white/40 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
                   />
                 </div>
 
-                <h3 className="text-xl font-medium text-white mb-2 tracking-tight group-hover:text-white">
+                <h3 className="text-lg font-medium text-white mb-1.5 tracking-tight group-hover:text-white">
                   {service.title}
                 </h3>
-                <p className="text-xs font-mono text-white/50 mb-4">{service.tagline}</p>
+                <p className="text-[11px] font-mono text-white/50 mb-3 line-clamp-1">{service.tagline}</p>
 
-                <p className="text-sm text-white/70 leading-relaxed font-normal">
+                <p className="text-xs text-white/70 leading-relaxed font-normal line-clamp-3">
                   {service.shortDesc}
                 </p>
               </div>
 
-              <div className="mt-8 pt-5 border-t border-white/10 flex items-center justify-between text-xs font-mono text-white/50">
-                <span>View Details</span>
-                <span className="text-white/30">→</span>
+              <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-white/50">
+                <span className="group-hover:text-white transition-colors">View Details</span>
+                <span className="text-white/30 group-hover:text-white transition-colors">→</span>
               </div>
             </Link>
           ))}
@@ -82,13 +82,13 @@ export default function ServicesSection() {
                 <div
                   key={service.id}
                   onMouseEnter={() => setActiveHoverId(service.id)}
-                  className="group relative border-b border-white/10 transition-colors py-6"
+                  className="group relative border-b border-white/10 transition-colors py-5"
                 >
                   <Link
                     to={`/services/${service.slug}`}
                     className="flex items-start justify-between gap-6 cursor-pointer"
                   >
-                    <div className="flex items-start gap-8">
+                    <div className="flex items-start gap-6">
                       <span
                         className={`font-mono text-sm transition-all duration-300 ${
                           isHovered ? 'text-white font-medium scale-105' : 'text-white/30'
@@ -100,7 +100,7 @@ export default function ServicesSection() {
                       <div className="flex flex-col">
                         <h3
                           className={`text-2xl font-medium tracking-tight transition-transform duration-300 ${
-                            isHovered ? 'translate-x-3 text-white' : 'text-white/80'
+                            isHovered ? 'translate-x-2 text-white' : 'text-white/80'
                           }`}
                         >
                           {service.title}
@@ -143,7 +143,7 @@ export default function ServicesSection() {
             })}
           </div>
 
-          {/* Right Column: Live Scope & Perfect-For Preview */}
+          {/* Right Column: Live Scope Preview */}
           <div className="col-span-5 sticky top-28 pl-4">
             <div className="liquid-glass rounded-2xl p-8 border border-white/10 min-h-[380px] flex flex-col justify-between">
               <div>
@@ -152,7 +152,7 @@ export default function ServicesSection() {
                     WHAT&apos;S INCLUDED
                   </span>
                   <span className="font-mono text-xs text-white/60">
-                    {activeService.number} / 04
+                    {activeService.number} / 05
                   </span>
                 </div>
 
@@ -206,7 +206,7 @@ export default function ServicesSection() {
                   onClick={() =>
                     setMobileExpandedId(isExpanded ? null : service.id)
                   }
-                  className="w-full flex items-center justify-between py-2 text-left"
+                  className="w-full flex items-center justify-between py-2 text-left cursor-pointer"
                 >
                   <div className="flex items-center gap-4">
                     <span className="font-mono text-xs text-white/40">

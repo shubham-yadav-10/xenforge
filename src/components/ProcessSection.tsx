@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, Search, LayoutTemplate, Coffee } from 'lucide-react';
+import { Search, LayoutTemplate, Coffee } from 'lucide-react';
 
 export default function ProcessSection() {
   const steps = [
@@ -8,7 +7,7 @@ export default function ProcessSection() {
       title: 'We study your business.',
       icon: Search,
       description:
-        'We research your market, your competitors and the gaps costing you customers. We look at your existing digital presence, local Google ranking, and conversion bottlenecks.',
+        'We research your market, your competitors and the gaps costing you customers. We inspect your existing digital presence, conversion bottlenecks, and technical opportunities.',
       highlight: 'Deep market & gap analysis',
     },
     {
@@ -16,7 +15,7 @@ export default function ProcessSection() {
       title: 'We map your tailored solution.',
       icon: LayoutTemplate,
       description:
-        'A concrete strategic preview of the website, automation system or creative campaign engineered for your brand. Before you commit a single penny, you see your brand in action with modern technology.',
+        'A concrete strategic preview of the website, mobile app, automation system or creative campaign engineered for your brand. Before you commit any investment, you see a clear solution roadmap.',
       highlight: 'Delivered in 48 hours',
     },
     {
@@ -41,23 +40,23 @@ export default function ProcessSection() {
             <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-2">
               05 / HOW IT WORKS
             </span>
-            <h2 className="text-3xl sm:text-5xl font-medium tracking-tight text-white">
+            <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight text-white">
               HOW IT WORKS
             </h2>
           </div>
           <p className="text-sm sm:text-base text-white/60 max-w-sm">
-            Three simple, risk-free steps from initial discovery to working solution.
+            Three simple, risk-free steps from initial discovery to a working digital solution.
           </p>
         </div>
 
         {/* 3 Steps Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.number}
-                className="liquid-glass rounded-2xl p-8 border border-white/10 flex flex-col justify-between"
+                className="liquid-glass rounded-2xl p-8 border border-white/10 flex flex-col justify-between hover:border-white/20 transition-all duration-300"
               >
                 <div>
                   <div className="flex items-center justify-between mb-8">
@@ -85,25 +84,6 @@ export default function ProcessSection() {
               </div>
             );
           })}
-        </div>
-
-        {/* CTA banner below process */}
-        <div className="liquid-glass rounded-2xl p-8 sm:p-10 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-white/50 block mb-1">
-              READY TO ACCELERATE YOUR GROWTH?
-            </span>
-            <h4 className="text-xl sm:text-2xl font-medium text-white">
-              Tell us about your brand and receive your tailored business audit report.
-            </h4>
-          </div>
-          <Link
-            to="/audit"
-            className="bg-white text-black text-xs sm:text-sm font-medium px-6 py-3 rounded-full hover:bg-white/90 transition-colors inline-flex items-center gap-2 whitespace-nowrap shadow-md cursor-pointer"
-          >
-            <span>Get a Free Business Audit</span>
-            <ArrowRight size={14} />
-          </Link>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ArrowUp, Mail, Phone, MapPin, Linkedin, Instagram, Twitter, Github } from 'lucide-react';
+import { ArrowUp, Phone, MapPin, Linkedin, Instagram, Github } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -7,47 +8,44 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#111214] text-white pt-20 pb-12 px-6 sm:px-12 border-t border-white/10 overflow-hidden">
+    <footer className="relative bg-[#0d0e10] text-white pt-20 pb-12 px-6 sm:px-12 border-t border-white/10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
           {/* Brand Column */}
           <div className="lg:col-span-5">
-            <h2 className="text-4xl sm:text-6xl font-semibold tracking-tighter text-white mb-4">
-              XenForge
-            </h2>
+            <div className="mb-4">
+              <Logo size="lg" showTagline />
+            </div>
             <p className="text-sm sm:text-base text-white/70 max-w-sm leading-relaxed mb-6 font-normal">
-              Websites, AI, marketing and video, forged for growth. Helping ambitious brands
-              get online, get noticed and get customers.
+              Websites, mobile apps, AI, marketing and video, forged for growth. Helping ambitious brands
+              get online, get noticed and win customers.
             </p>
 
-            <div className="space-y-2 text-xs font-mono text-white/50">
-              <div className="flex items-center gap-2">
-                <MapPin size={13} className="text-white/40" />
+            <div className="space-y-2.5 text-xs font-mono text-white/50">
+              <div className="flex items-start gap-2">
+                <MapPin size={14} className="text-white/40 shrink-0 mt-0.5" />
                 <span>Bengaluru, India · Serving clients across India and worldwide</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail size={13} className="text-white/40" />
-                <a href="mailto:hello@xenforge.com" className="hover:text-white transition-colors">
-                  hello@xenforge.com
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone size={13} className="text-white/40" />
-                <a href="https://wa.me/919876543210" className="hover:text-white transition-colors">
+                <Phone size={14} className="text-white/40 shrink-0" />
+                <a
+                  href="https://wa.me/919876543210"
+                  className="hover:text-white transition-colors"
+                >
                   +91 98765 43210 (WhatsApp / Call)
                 </a>
               </div>
             </div>
 
-            {/* Social Media Links Strip */}
+            {/* Social Media Links Strip (Twitter/X removed) */}
             <div className="mt-6 pt-5 border-t border-white/10 flex items-center gap-3">
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-8 h-8 rounded-full liquid-glass border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 transition-all"
+                className="w-8 h-8 rounded-full liquid-glass border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 transition-all cursor-pointer"
               >
                 <Linkedin size={14} />
               </a>
@@ -56,25 +54,16 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-8 h-8 rounded-full liquid-glass border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 transition-all"
+                className="w-8 h-8 rounded-full liquid-glass border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 transition-all cursor-pointer"
               >
                 <Instagram size={14} />
-              </a>
-              <a
-                href="https://x.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X (Twitter)"
-                className="w-8 h-8 rounded-full liquid-glass border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 transition-all"
-              >
-                <Twitter size={14} />
               </a>
               <a
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="w-8 h-8 rounded-full liquid-glass border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 transition-all"
+                className="w-8 h-8 rounded-full liquid-glass border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-white/30 transition-all cursor-pointer"
               >
                 <Github size={14} />
               </a>
@@ -115,7 +104,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services Links */}
+          {/* Services Links (Includes App Development) */}
           <div className="lg:col-span-2">
             <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-4">
               Services
@@ -127,6 +116,14 @@ export default function Footer() {
                   className="text-white/70 hover:text-white transition-colors"
                 >
                   Website Development
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/app-development"
+                  className="text-white/70 hover:text-white transition-colors"
+                >
+                  App Development
                 </Link>
               </li>
               <li>
@@ -174,7 +171,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/security" className="text-white/70 hover:text-white transition-colors">
-                  Security
+                  Security Standards
                 </Link>
               </li>
               <li>

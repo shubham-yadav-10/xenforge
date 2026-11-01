@@ -21,7 +21,8 @@ export default function ContactPage() {
   const [showCallModal, setShowCallModal] = useState(false);
 
   const serviceOptions = [
-    'Website',
+    'Website Development',
+    'App Development',
     'AI Automation',
     'Digital Marketing',
     'Video Editing',
@@ -392,7 +393,7 @@ export default function ContactPage() {
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-white/80 mb-6 space-y-2">
               <div>• Platform: Google Meet or Zoom</div>
               <div>• Duration: 20 Minutes</div>
-              <div>• With: Shubham & XenForge Core Team</div>
+              <div>• With: XenForge Core Team</div>
             </div>
 
             <div className="flex flex-col gap-3">
@@ -403,7 +404,7 @@ export default function ContactPage() {
                 Send Direct Meeting Request
               </a>
               <a
-                href="https://wa.me/919876543210?text=Hi%20Shubham%2C%20I'd%20like%20to%20schedule%20a%20call%20for%20my%20business"
+                href="https://wa.me/919876543210?text=Hi%20XenForge%2C%20I'd%20like%20to%20schedule%20a%20call%20for%20my%20business"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full liquid-glass text-white text-center text-xs font-medium py-3 rounded-full hover:bg-white/5 transition-colors"

@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle2, Sparkles, Globe, ExternalLink } from 'lucide-react';
 import { projectsData } from '../data/projectsData';
 
 export default function ProjectDetailPage() {
@@ -29,9 +29,24 @@ export default function ProjectDetailPage() {
 
         {/* Case Study Header */}
         <header className="pb-12 border-b border-white/10 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass text-xs font-mono text-emerald-400 mb-4 border border-white/10">
-            <Sparkles size={12} />
-            <span>{project.conceptType}</span>
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass text-xs font-mono text-emerald-400 border border-white/10">
+              <Sparkles size={12} />
+              <span>{project.conceptType}</span>
+            </div>
+
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-mono text-black bg-white px-4 py-2 rounded-full hover:bg-white/90 transition-all shadow-md font-medium"
+              >
+                <Globe size={13} className="text-emerald-600" />
+                <span>Visit Live Website ({project.liveUrl.replace('https://', '')})</span>
+                <ExternalLink size={12} />
+              </a>
+            )}
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-medium tracking-tight text-white mb-4 leading-tight">
@@ -60,7 +75,10 @@ export default function ProjectDetailPage() {
               <span className="text-white/40 uppercase tracking-widest block mb-1">
                 Status
               </span>
-              <span className="text-white/90">XenForge Prototype Concept</span>
+              <span className="text-emerald-400 flex items-center gap-1.5 font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                {project.isClientProject ? 'Live Production Platform' : 'XenForge Prototype Concept'}
+              </span>
             </div>
             <div>
               <span className="text-white/40 uppercase tracking-widest block mb-1">
@@ -72,31 +90,65 @@ export default function ProjectDetailPage() {
         </header>
 
         {/* Visual Mockup Screen / Canvas Frame */}
-        <div className="mb-20 rounded-2xl liquid-glass border border-white/10 p-6 sm:p-12 overflow-hidden">
-          <div className="rounded-xl bg-gradient-to-br from-white/10 via-black to-black border border-white/10 p-6 sm:p-10 aspect-[16/9] flex flex-col justify-between">
-            <div className="flex items-center justify-between font-mono text-[11px] text-white/40 border-b border-white/10 pb-3">
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                https://{project.slug}.sample.xenforge.com
+        <div className="mb-20 rounded-2xl liquid-glass border border-white/10 p-4 sm:p-8 overflow-hidden">
+          <div className="rounded-xl border border-white/15 overflow-hidden shadow-2xl bg-black/60">
+            {/* Browser Header Bar */}
+            <div className="bg-[#14151a] px-4 py-3 border-b border-white/10 flex items-center justify-between text-[11px] font-mono text-white/50">
+              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5 mr-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                </div>
+                <span className="text-emerald-400 flex items-center gap-1.5 font-medium">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  {project.liveUrl || `https://${project.slug}.sample.xenforge.com`}
+                </span>
+              </div>
+              <span className="text-[10px] uppercase text-white/40">
+                {project.isClientProject ? 'LIVE PRODUCTION CLIENT' : 'VERIFIED CONCEPT'}
               </span>
-              <span>VERIFIED XENFORGE CONCEPT</span>
             </div>
 
-            <div className="my-auto text-center py-6">
-              <span className="font-mono text-xs text-white/40 uppercase tracking-widest block mb-2">
-                {project.businessType}
-              </span>
-              <h2 className="text-3xl sm:text-5xl font-medium text-white tracking-tight">
-                {project.title}
-              </h2>
-              <p className="text-sm text-white/60 mt-2 max-w-md mx-auto">
-                {project.subtitle}
-              </p>
-            </div>
+            {/* Browser Content Screenshot */}
+            {project.imageUrl ? (
+              <div className="relative aspect-[16/9] w-full overflow-hidden bg-black">
+                <img
+                  src={project.imageUrl}
+                  alt={`${project.title} live interface`}
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            ) : (
+              <div className="p-8 sm:p-14 text-center my-auto aspect-[16/9] flex flex-col justify-center bg-gradient-to-br from-white/10 via-black to-[#0e1015]">
+                <span className="font-mono text-xs text-white/40 uppercase tracking-widest block mb-2">
+                  {project.businessType}
+                </span>
+                <h2 className="text-3xl sm:text-5xl font-medium text-white tracking-tight">
+                  {project.title}
+                </h2>
+                <p className="text-sm text-white/60 mt-2 max-w-md mx-auto">
+                  {project.subtitle}
+                </p>
+              </div>
+            )}
 
-            <div className="flex items-center justify-between font-mono text-[10px] text-white/30 pt-3 border-t border-white/5">
+            {/* Browser Footer Meta */}
+            <div className="px-4 py-3 bg-[#111215] border-t border-white/10 flex flex-wrap items-center justify-between gap-3 font-mono text-[11px] text-white/50">
               <span>STACK: {project.technologies.join(' · ')}</span>
-              <span>HONEST SAMPLE</span>
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-white hover:text-emerald-400 transition-colors font-medium"
+                >
+                  <Globe size={13} className="text-emerald-400" />
+                  <span>Launch Live Site ({project.liveUrl.replace('https://', '')})</span>
+                  <ExternalLink size={12} />
+                </a>
+              )}
             </div>
           </div>
         </div>
