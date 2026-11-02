@@ -6,7 +6,7 @@ import { projectsData, ProjectItem } from '../data/projectsData';
 export default function FeaturedWorkSection() {
   const [activeCategory, setActiveCategory] = useState<string>('All');
 
-  const categories = ['All', 'Website', 'AI Automation', 'Marketing', 'Video'];
+  const categories = ['All', 'Website', 'Video'];
 
   const filteredProjects =
     activeCategory === 'All'

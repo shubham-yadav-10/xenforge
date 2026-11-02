@@ -16,15 +16,15 @@ interface TestimonialItem {
 const testimonials: TestimonialItem[] = [
   {
     id: '01',
-    name: 'Sanvo Technologies',
-    role: 'Enterprise Workforce Housing OS',
+    name: 'Sanvo Bath Fixtures',
+    role: 'Director of Brand & Digital',
     company: 'Sanvo (sanvo.co)',
-    industry: 'Enterprise PropTech',
+    industry: 'Luxury Bath Fixtures',
     metric: '100% Live',
-    metricLabel: 'Enterprise Platform at sanvo.co',
+    metricLabel: 'sanvo.co Digital Catalog',
     quote:
-      'XenForge engineered the digital platform and enterprise architecture for sanvo.co. They translated complex workforce accommodation ledgers and compliance standards into a fast, intuitive web presence that establishes instant credibility with operators and regulators.',
-    serviceUsed: 'Custom Web Platform + Enterprise UI/UX',
+      'XenForge engineered the digital presence and product showcase for sanvo.co. They captured our "Quiet luxury, precisely made" philosophy with an intuitive, high-speed digital catalog that our architects, interior designers, and clients love exploring.',
+    serviceUsed: 'Luxury Website Design + Digital Product Showcase',
   },
   {
     id: '02',
@@ -105,7 +105,7 @@ export default function TestimonialsSection() {
 
   const industries = [
     'All',
-    'Enterprise PropTech',
+    'Luxury Bath Fixtures',
     'Specialty Café & D2C',
     'Boutique Real Estate',
     'Healthcare & Aesthetic Clinic',

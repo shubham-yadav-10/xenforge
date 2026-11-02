@@ -43,7 +43,7 @@ export default function ProjectDetailPage() {
                 className="inline-flex items-center gap-1.5 text-xs font-mono text-black bg-white px-4 py-2 rounded-full hover:bg-white/90 transition-all shadow-md font-medium"
               >
                 <Globe size={13} className="text-emerald-600" />
-                <span>Visit Live Website ({project.liveUrl.replace('https://', '')})</span>
+                <span>{project.externalLinkText || `Visit Project (${project.liveUrl.replace('https://', '')})`}</span>
                 <ExternalLink size={12} />
               </a>
             )}
@@ -110,8 +110,77 @@ export default function ProjectDetailPage() {
               </span>
             </div>
 
-            {/* Browser Content Screenshot */}
-            {project.imageUrl ? (
+            {/* Project Interface / Mockup Display */}
+            {project.slug === 'estateflow-real-estate-crm-app' ? (
+              <div className="p-6 sm:p-10 bg-black flex flex-col items-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 max-w-2xl w-full">
+                  {/* Phone 1: Dashboard */}
+                  <div className="rounded-3xl p-3 bg-[#181a20] border-2 border-white/20 shadow-2xl">
+                    <div className="w-20 h-4 bg-black rounded-full mx-auto mb-2" />
+                    <div className="rounded-2xl overflow-hidden aspect-[9/18.5] bg-black">
+                      <img
+                        src={project.imageUrl}
+                        alt={`${project.title} Dashboard Screen`}
+                        className="w-full h-full object-cover object-top hover:scale-[1.03] transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="mt-3 text-center text-xs font-mono text-emerald-400 font-medium">
+                      01 / Builder Dashboard & Deal Funnel
+                    </div>
+                  </div>
+
+                  {/* Phone 2: Properties */}
+                  <div className="rounded-3xl p-3 bg-[#181a20] border-2 border-white/20 shadow-2xl">
+                    <div className="w-20 h-4 bg-black rounded-full mx-auto mb-2" />
+                    <div className="rounded-2xl overflow-hidden aspect-[9/18.5] bg-black">
+                      <img
+                        src={project.secondaryImageUrl}
+                        alt={`${project.title} Property Inventory Screen`}
+                        className="w-full h-full object-cover object-top hover:scale-[1.03] transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="mt-3 text-center text-xs font-mono text-blue-400 font-medium">
+                      02 / Multi-City Property Inventory
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : project.slug === 'shopify-crm-ai-marketing-automation' ? (
+              <div className="p-4 sm:p-8 bg-black flex flex-col items-center">
+                <div className="w-full max-w-4xl space-y-4">
+                  <div className="rounded-xl overflow-hidden border border-white/10 bg-black/60 p-2">
+                    <img
+                      src="/assets/images/shopify_automation_header_badge.png"
+                      alt="Shopify CRM 9 Workflows Badge"
+                      className="w-full h-auto object-contain max-h-16"
+                    />
+                  </div>
+                  <div className="rounded-xl overflow-hidden border border-white/15 bg-black p-4">
+                    <img
+                      src={project.imageUrl}
+                      alt="Shopify Marketing Automation 9 Workflows Diagram"
+                      className="w-full h-auto object-contain rounded"
+                    />
+                  </div>
+                </div>
+              </div>
+            ) : project.slug === 'makrand-honey-brand-marketing' ? (
+              <div className="p-6 sm:p-10 bg-black flex flex-col items-center">
+                <div className="max-w-[340px] w-full rounded-3xl p-3 bg-[#181a20] border-2 border-white/20 shadow-2xl">
+                  <div className="w-20 h-4 bg-black rounded-full mx-auto mb-2" />
+                  <div className="rounded-2xl overflow-hidden bg-black">
+                    <img
+                      src={project.imageUrl}
+                      alt="Makrand Honey Instagram Profile and Highlights"
+                      className="w-full h-auto object-cover object-top hover:scale-[1.02] transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="mt-3 text-center text-xs font-mono text-amber-300">
+                    @makrandhoney · D2C Organic Brand Strategy
+                  </div>
+                </div>
+              </div>
+            ) : project.imageUrl ? (
               <div className="relative aspect-[16/9] w-full overflow-hidden bg-black">
                 <img
                   src={project.imageUrl}
@@ -145,7 +214,7 @@ export default function ProjectDetailPage() {
                   className="inline-flex items-center gap-1.5 text-white hover:text-emerald-400 transition-colors font-medium"
                 >
                   <Globe size={13} className="text-emerald-400" />
-                  <span>Launch Live Site ({project.liveUrl.replace('https://', '')})</span>
+                  <span>{project.externalLinkText || `Launch Live (${project.liveUrl.replace('https://', '')})`}</span>
                   <ExternalLink size={12} />
                 </a>
               )}
